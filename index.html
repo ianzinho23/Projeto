@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModoCarreira</title>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-icone">ϟ</div>
+        <span class="logo-texto">Modo<span class="verde">Carreira</span></span>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <div class="navbar-botoes" id="navbarBotoes">
+        <a href="pages/login/login.html" class="btn btn-link">Entrar</a>
+        <a href="pages/cadastro/cadastro.html" class="btn btn-verde-pequeno">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-texto">
+        <div class="hero-tag">
+          <span class="bolinha"></span>
+          Plataforma de Talentos do Futebol Base
+        </div>
+
+        <h1 class="hero-titulo">
+          Seu Talento <br>
+          <span class="verde">Merece</span> <br>
+          Ser Visto
+        </h1>
+
+        <p class="hero-paragrafo">
+          Conectamos atletas das categorias de base com clubes, olheiros, empresários e
+          treinadores de todo o Brasil. Do interior ao profissional, uma plataforma que
+          abre portas.
+        </p>
+
+        <div class="hero-botoes">
+          <a href="pages/cadastro/cadastro.html" class="btn btn-verde">Criar Meu Perfil →</a>
+          <a href="#descobrir" class="btn btn-contorno">👁 Ver Atletas</a>
+        </div>
+
+        <!-- Números de destaque -->
+        <div class="hero-stats">
+          <div class="stat">
+            <p class="stat-numero">2.400+</p>
+            <p class="stat-legenda">Atletas Cadastrados</p>
+          </div>
+          <div class="stat">
+            <p class="stat-numero">180+</p>
+            <p class="stat-legenda">Clubes Parceiros</p>
+          </div>
+          <div class="stat">
+            <p class="stat-numero">340+</p>
+            <p class="stat-legenda">Contratos Firmados</p>
+          </div>
+          <div class="stat">
+            <p class="stat-numero">620+</p>
+            <p class="stat-legenda">Olheiros Ativos</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-imagem">
+        <img src="https://www.figma.com/api/mcp/asset/1ad95a2a-2bf5-488a-b291-ad85f78fa246" alt="Jovem atleta em ação no campo">
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="container">
+      <p class="rotulo">// como funciona</p>
+      <h2 class="titulo-secao">Do Campo ao <span class="verde">Profissional</span></h2>
+
+      <div class="passos">
+        <div class="passo-card">
+          <p class="passo-numero-fundo">01</p>
+          <p class="rotulo">Passo 1</p>
+          <h3 class="passo-titulo">Crie seu Perfil</h3>
+          <p class="passo-texto">
+            Monte sua vitrine com estatísticas, vídeos de destaque, histórico de
+            clubes e conquistas. Seu currículo esportivo completo em um só lugar.
+          </p>
+        </div>
+
+        <div class="passo-card">
+          <p class="passo-numero-fundo">02</p>
+          <p class="rotulo">Passo 2</p>
+          <h3 class="passo-titulo">Seja Descoberto</h3>
+          <p class="passo-texto">
+            Olheiros, empresários e clubes de todo o Brasil buscam talentos na
+            plataforma. Seu perfil aparece para quem realmente decide.
+          </p>
+        </div>
+
+        <div class="passo-card">
+          <p class="passo-numero-fundo">03</p>
+          <p class="rotulo">Passo 3</p>
+          <h3 class="passo-titulo">Feche Oportunidades</h3>
+          <p class="passo-texto">
+            Receba propostas, agende avaliações e negocie diretamente. Do contato
+            inicial ao contrato, tudo dentro da plataforma.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="descobrir">
+    <div class="container">
+      <div class="profissionais-grade">
+
+        <div class="profissionais-imagem">
+          <img src="https://www.figma.com/api/mcp/asset/1ad95a2a-2bf5-488a-b291-ad85f78fa246" alt="Olheiros e dirigentes em avaliação de atletas">
+          <div class="cartao-flutuante">
+            <p class="stat-numero">180+</p>
+            <p class="cartao-flutuante-texto">Clubes parceiros buscam talentos aqui</p>
+          </div>
+        </div>
+
+        <div class="profissionais-texto">
+          <p class="rotulo">// para profissionais</p>
+          <h2 class="titulo-secao">Encontre Talentos <span class="verde">Antes de Todos</span></h2>
+          <p class="paragrafo-normal">
+            Acesso a uma base completa e atualizada de atletas de base por todo o Brasil.
+            Filtre por posição, categoria, região e métricas de desempenho. Economize
+            tempo, descubra mais.
+          </p>
+
+          <div class="lista-recursos">
+            <div class="recurso-item">
+              <div class="recurso-icone">📊</div>
+              <div>
+                <p class="recurso-titulo">Métricas detalhadas por atleta</p>
+                <p class="recurso-texto">Gols, assistências, dribles, minutos jogados e muito mais.</p>
+              </div>
+            </div>
+
+            <div class="recurso-item">
+              <div class="recurso-icone">✅</div>
+              <div>
+                <p class="recurso-titulo">Perfis verificados e atualizados</p>
+                <p class="recurso-texto">Dados confirmados pelos clubes e comissões técnicas.</p>
+              </div>
+            </div>
+
+            <div class="recurso-item">
+              <div class="recurso-icone">💬</div>
+              <div>
+                <p class="recurso-titulo">Contato direto com o atleta</p>
+                <p class="recurso-texto">Negocie e agende avaliações diretamente pela plataforma.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="pages/cadastro/cadastro.html" class="btn btn-verde">Acesso para Profissionais →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="secao secao-escura">
+    <div class="container">
+      <p class="rotulo">// depoimentos</p>
+      <h2 class="titulo-secao">Histórias que <span class="verde">Inspiram</span></h2>
+
+      <div class="depoimentos">
+        <div class="depoimento-card">
+          <p class="aspas">"</p>
+          <p class="depoimento-texto">
+            Em três meses na plataforma já identifiquei quatro jovens que hoje estão
+            em testes conosco. A filtragem por região e categoria economiza semanas
+            de trabalho.
+          </p>
+          <div class="depoimento-autor">
+            <img src="https://www.figma.com/api/mcp/asset/962f9ac4-6e70-4e55-95a5-dddaf275dac3" alt="Rodrigo Mendes" class="autor-foto">
+            <div>
+              <p class="autor-nome">Rodrigo Mendes</p>
+              <p class="autor-cargo">Olheiro — Clube Atlético Mineiro</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card">
+          <p class="aspas">"</p>
+          <p class="depoimento-texto">
+            Representava jogadores que nunca tinham visibilidade fora do estado. Hoje
+            tenho atletas Sub-17 com propostas de clubes europeus por conta da
+            exposição aqui.
+          </p>
+          <div class="depoimento-autor">
+            <img src="https://www.figma.com/api/mcp/asset/bf76ab3c-cc30-42d5-b321-9c98be2cf83e" alt="Carla Nascimento" class="autor-foto">
+            <div>
+              <p class="autor-nome">Carla Nascimento</p>
+              <p class="autor-cargo">Empresária de Futebol</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card">
+          <p class="aspas">"</p>
+          <p class="depoimento-texto">
+            Meu filho jogava em clube do interior sem ninguém saber. Em dois meses
+            com o perfil completo, recebeu convite para teste em time da Série B.
+            É transformador.
+          </p>
+          <div class="depoimento-autor">
+            <img src="https://www.figma.com/api/mcp/asset/e0294d73-498e-48d5-a0c2-56750351dfbc" alt="Jonas Pereira" class="autor-foto">
+            <div>
+              <p class="autor-nome">Jonas Pereira</p>
+              <p class="autor-cargo">Pai do Atleta Bruno Pereira, 16 anos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao cta-final">
+    <div class="container cta-conteudo">
+      <p class="rotulo">// próximo passo</p>
+      <h2 class="titulo-cta">Sua Carreira <span class="verde">Começa Agora</span></h2>
+      <p class="paragrafo-normal">
+        Cadastre seu perfil gratuitamente e entre para a maior vitrine de talentos
+        do futebol base brasileiro. Olheiros e clubes estão esperando por você.
+      </p>
+
+      <div class="cta-botoes">
+        <a href="pages/cadastro/cadastro.html" class="btn btn-verde">Cadastrar Atleta — É Grátis →</a>
+        <a href="pages/cadastro/cadastro.html" class="btn btn-contorno">Acesso para Clubes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="logo">
+        <div class="logo-icone logo-icone-pequeno">⚽</div>
+        <span class="logo-texto">Modo<span class="verde">Carreira</span></span>
+      </div>
+      <p class="rodape-texto">© 2026 ModoCarreira · Plataforma de Talentos do Futebol Brasileiro</p>
+      <div class="rodape-links">
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
