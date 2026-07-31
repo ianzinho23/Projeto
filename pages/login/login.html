@@ -1,440 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar | ModoCarreira</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | ModoCarreira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
 </head>
-
-
 <body>
 
-<div class="page">
-
-
-    <!-- ================= LADO ESQUERDOOOOO ================= -->
-
+  <div class="page">
 
     <section class="side side--visual">
+      <div class="visual-bg"></div>
+      <div class="visual-vignette"></div>
 
+      <a href="/index.html" class="back-link">← VOLTAR</a>
 
-        <div class="visual-bg"></div>
-        <div class="visual-vignette"></div>
-        <div class="floodlight"></div>
+      <div class="visual-bottom">
+        <p class="eyebrow">// plataforma de talentos</p>
 
+        <h1 class="hero-title">
+          SEU PRÓXIMO <br>
+          <span class="accent">PASSO COMEÇA</span> <br>
+          AQUI.
+        </h1>
 
-        <div class="visual-top">
-
-
-            <a href="javascript:history.back()" class="back-link">
-
-
-                <svg width="16" height="16"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2.5"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-
-
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-
-
-                </svg>
-
-
-                VOLTAR
-
-
-            </a>
-
-
-        </div>
-
-
-        <div class="visual-bottom">
-
-
-            <div class="visual-content">
-
-
-                <p class="eyebrow">
-                    // PLATAFORMA DE TALENTOS
-                </p>
-
-
-                <h1 class="hero-title">
-
-
-                    SEU PRÓXIMO
-
-
-                    <br>
-
-
-                    <span class="accent">
-                        PASSO COMEÇA
-                    </span>
-
-
-                    <br>
-
-
-                    AQUI.
-
-
-                </h1>
-
-
-                <p class="hero-sub">
-
-
-                    Mais de 2.400 atletas já estão na vitrine.
-
-
-                    Olheiros de 180 clubes buscam talentos todos os dias.
-
-
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
+        <p class="hero-sub">
+          Mais de 2.400 atletas já estão na vitrine. Olheiros de 180 clubes
+          buscam talentos todos os dias.
+        </p>
+      </div>
     </section>
-
-
-    <!-- ================= LADO DIREITOOOOOOO ================= -->
-
 
     <section class="side side--form">
-
-
-        <div class="form-wrap">
-
-
-            <header class="brand">
-
-
-                <span class="brand-mark">
-
-
-                    <svg width="18"
-                         height="18"
-                         viewBox="0 0 24 24"
-                         fill="currentColor">
-
-
-                        <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z"/>
-
-
-                    </svg>
-
-
-                </span>
-
-
-                <span class="brand-name">
-
-
-                    MODO
-
-
-                    <span class="brand-name--accent">
-
-
-                        CARREIRA
-
-
-                    </span>
-
-
-                </span>
-
-
-            </header>
-
-
-            <!-- LOGINNNNN -->
-
-
-            <div class="panel" id="panelLogin">
-
-
-                <h2 class="title">
-
-
-                    ENTRAR
-
-
-                </h2>
-
-
-                <p class="subtitle">
-
-
-                    Não tem conta?
-
-
-                    <a href="/pages/cadastro/cadastro.html" class="link">
-
-
-                        Cadastre-se grátis
-
-
-                    </a>
-
-
-                </p>
-
-
-                <form id="loginForm" novalidate>
-
-
-                    <div class="field">
-
-
-                        <label for="email">
-
-
-                            E-MAIL
-
-
-                        </label>
-
-
-                        <input
-                            id="email"
-                            type="email"
-                            placeholder="seu@email.com"
-                            required>
-
-
-                    </div>
-
-
-                    <div class="field">
-
-
-                        <label for="senha">
-
-
-                            SENHA
-
-
-                        </label>
-
-
-                        <div class="password-wrap">
-
-
-                            <input
-                                id="senha"
-                                type="password"
-                                placeholder="••••••••"
-                                required>
-
-
-                            <button
-                                type="button"
-                                class="toggle-pass"
-                                id="togglePass">
-
-
-                                <svg id="eyeIcon"
-                                     width="18"
-                                     height="18"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     stroke="currentColor"
-                                     stroke-width="2">
-
-
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"></path>
-
-
-                                    <circle cx="12" cy="12" r="3"></circle>
-
-
-                                </svg>
-
-
-                            </button>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="row-between">
-
-
-                        <label class="checkbox">
-
-
-                            <input type="checkbox">
-
-
-                            <span class="box"></span>
-
-
-                            Lembrar de mim
-
-
-                        </label>
-
-
-                        <a href="#" class="link link--muted">
-
-
-                            Esqueci a senha
-
-
-                        </a>
-
-
-                    </div>
-
-
-                    <button
-                        class="btn-primary"
-                        id="submitBtn"
-                        type="submit">
-
-
-                        <span class="btn-label">
-
-
-                            ENTRAR NA PLATAFORMA
-
-
-                        </span>
-
-
-                    </button>
-
-
-                </form>
-
-
-                <div class="divider">
-
-
-                    <span>
-
-
-                        OU CONTINUE COM
-
-
-                    </span>
-
-
-                </div>
-
-
-                <div class="oauth-row">
-
-
-                    <button
-                        id="googleBtn"
-                        class="btn-oauth"
-                        type="button">
-
-
-                        GOOGLE
-
-
-                    </button>
-
-
-                    <button
-                        id="facebookBtn"
-                        class="btn-oauth"
-                        type="button">
-
-
-                        FACEBOOK
-
-
-                    </button>
-
-
-                </div>
-
-
+      <div class="form-wrap">
+
+        <header class="brand">
+          <span class="brand-mark">ϟ</span>
+          <span class="brand-name">MODO<span class="brand-name--accent">CARREIRA</span></span>
+        </header>
+
+        // PAINEL 1: formulário de login
+        <div class="panel" id="panelLogin">
+          <h2 class="title">Entrar</h2>
+          <p class="subtitle">
+            Não tem conta?
+            <a href="/pages/cadastro/cadastro.html" class="link">Cadastre-se grátis</a>
+          </p>
+
+          <form id="loginForm">
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="seu@email.com" required>
             </div>
 
-
-            <!-- SUCESSOooooooo -->
-
-
-            <div id="panelSuccess" class="panel hidden">
-
-
-                <div class="success-icon">
-
-
-                    ✓
-
-
-                </div>
-
-
-                <h2 class="success-title">
-
-
-                    BEM-VINDO DE VOLTA!
-
-
-                </h2>
-
-
-                <p class="success-sub">
-
-
-                    Login realizado com sucesso.
-
-
-                </p>
-
-
-                <button
-                    id="continueBtn"
-                    class="btn-primary">
-
-
-                    IR PARA A PLATAFORMA
-
-
-                </button>
-
-
+            <div class="field">
+              <label for="senha">Senha</label>
+              <div class="password-wrap">
+                <input id="senha" type="password" placeholder="••••••••" required>
+                <button type="button" class="toggle-pass" id="togglePass">👁</button>
+              </div>
             </div>
 
+            <div class="row-between">
+              <label class="checkbox">
+                <input type="checkbox">
+                Lembrar de mim
+              </label>
+              <a href="#" class="link link--muted">Esqueci a senha</a>
+            </div>
 
+            <button class="btn-primary" type="submit">Entrar na Plataforma →</button>
+          </form>
+
+          <div class="divider"><span>ou continue com</span></div>
+
+          <div class="oauth-row">
+            <button id="googleBtn" class="btn-oauth" type="button">Google</button>
+            <button id="facebookBtn" class="btn-oauth" type="button">Facebook</button>
+          </div>
         </div>
 
+        <div id="panelSuccess" class="panel hidden">
+          <div class="success-icon">✓</div>
+          <h2 class="success-title">Bem-vindo de volta!</h2>
+          <p class="success-sub">Login realizado com sucesso.</p>
+          <button id="continueBtn" class="btn-primary">Ir para a Plataforma →</button>
+        </div>
 
+      </div>
     </section>
 
+  </div>
 
-</div>
-
-
-<script src="login.js"></script>
-
-
+  <script src="login.js"></script>
 </body>
 </html>

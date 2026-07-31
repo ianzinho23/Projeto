@@ -1,308 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModoCarreira - Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModoCarreira - Cadastro</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-
-    <link rel="stylesheet" href="/pages/cadastro/cadastro.css">
+  <link rel="stylesheet" href="/pages/cadastro/cadastro.css">
 </head>
-
-
 <body>
 
+  <div class="page">
 
-    <div class="page">
+    <div class="left-panel">
+      <a href="/index.html" class="back-link">← Voltar</a>
 
-
-        <div class="left-panel">
-            <div class="visual-top">
-
-
-            <a href="javascript:history.back()" class="back-link">
-
-
-                <svg width="16" height="16"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2.5"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-
-
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-
-
-                </svg>
-
-
-                VOLTAR
-
-
-            </a>
-
-
+      <div class="left-bottom-content">
+        <div class="features">
+          <div class="feature"><span class="feature-icon">🔍</span> Acesso à base completa de talentos</div>
+          <div class="feature"><span class="feature-icon">🎯</span> Filtros por esporte, posição e região</div>
+          <div class="feature"><span class="feature-icon">💬</span> Contato direto com o atleta</div>
         </div>
 
-
-            <div class="left-bottom-content">
-                <div class="features">
-                    <div class="feature"><span class="feature-icon">🔍</span> Acesso à base completa de talentos</div>
-                    <div class="feature"><span class="feature-icon">🎯</span> Filtros por esporte, posição e região
-                    </div>
-                    <div class="feature"><span class="feature-icon">💬</span> Contato direto com o atleta</div>
-                </div>
-
-
-                <div class="hero-text">
-                    <h1>ACESSE</h1>
-                    <h1 class="green">2.400+</h1>
-                    <h1>PERFIS.</h1>
-                </div>
-            </div>
+        <div class="hero-text">
+          <h1>ACESSE</h1>
+          <h1 class="green">2.400+</h1>
+          <h1>PERFIS.</h1>
         </div>
-
-
-        <div class="right-panel">
-
-
-            <div class="logo">
-                <span class="logo-icon" aria-hidden="true">⚡</span>
-                <span class="logo-text"><span class="light">MODO</span><span class="accent">CARREIRA</span></span>
-            </div>
-
-
-            <div class="form-area">
-
-
-                <div class="step active" id="step-1" data-step="1">
-                    <div class="step-head">
-                        <h2>Quem é você?</h2>
-                        <span class="step-count">1/3</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill" id="progress-1" style="width:33.33%"></div>
-                    </div>
-
-
-                    <p class="login-hint">Já tem conta? <a href="/pages/login/login.html">Faça login</a>
-                    </p>
-
-
-                    <div class="option-card" data-type="clube" tabindex="0" role="radio" aria-checked="false">
-                        <span class="option-icon">🏛️</span>
-                        <span class="option-copy">
-                            <strong>Clube / Olheiro</strong>
-                            <span>Busco talentos para minha equipe ou organização</span>
-                        </span>
-                        <span class="option-check"><svg viewBox="0 0 24 24" fill="none">
-                                <path d="M5 13l4 4L19 7" stroke="#08130a" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></span>
-                    </div>
-
-
-                    <div class="option-card" data-type="empresario" tabindex="0" role="radio" aria-checked="false">
-                        <span class="option-icon">🤝</span>
-                        <span class="option-copy">
-                            <strong>Empresário</strong>
-                            <span>Represento e gerencio atletas profissionalmente</span>
-                        </span>
-                        <span class="option-check"><svg viewBox="0 0 24 24" fill="none">
-                                <path d="M5 13l4 4L19 7" stroke="#08130a" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></span>
-                    </div>
-
-
-                    <div class="btn-row">
-                        <button class="btn-primary" id="btn-step1-continue" type="button" disabled>Continuar <span
-                                aria-hidden="true">›</span></button>
-                    </div>
-                </div>
-
-
-                <div class="step" id="step-2" data-step="2">
-                    <div class="step-head">
-                        <h2>Sua conta</h2>
-                        <span class="step-count">2/3</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill" id="progress-2" style="width:66.66%"></div>
-                    </div>
-
-
-                    <div class="field">
-                        <label for="nomeCompleto">Nome completo</label>
-                        <input type="text" id="nomeCompleto" placeholder="Gabriel Monteiro" autocomplete="name">
-                        <span class="field-error" id="erro-nome">Nome obrigatório</span>
-                    </div>
-
-
-                    <div class="field">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seu@email.com" autocomplete="email">
-                        <span class="field-error" id="erro-email">E-mail inválido</span>
-                    </div>
-
-
-                    <div class="field">
-                        <label for="senha">Senha</label>
-                        <div class="input-wrap">
-                            <input type="password" id="senha" class="has-toggle" placeholder="Mínimo 6 caracteres"
-                                autocomplete="new-password">
-                            <button type="button" class="pw-toggle" data-target="senha" aria-label="Mostrar senha">
-                                <svg class="icon-on" viewBox="0 0 24 24" fill="none">
-                                    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" stroke="currentColor"
-                                        stroke-width="1.6" />
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" />
-                                </svg>
-                                <svg class="icon-off" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M3 3l18 18M10.6 10.6a3 3 0 0 0 4.24 4.24M9.1 5.5A11 11 0 0 1 12 5c7 0 11 7 11 7a13.5 13.5 0 0 1-3.1 3.9M6.4 6.4A13.6 13.6 0 0 0 1 12s4 7 11 7a10.9 10.9 0 0 0 3.9-.7"
-                                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                                </svg>
-                            </button>
-                        </div>
-                        <span class="field-error" id="erro-senha">Mínimo 6 caracteres</span>
-                    </div>
-
-
-                    <div class="field">
-                        <label for="confirmarSenha">Confirmar senha</label>
-                        <div class="input-wrap">
-                            <input type="password" id="confirmarSenha" class="has-toggle" placeholder="Repita a senha"
-                                autocomplete="new-password">
-                            <button type="button" class="pw-toggle" data-target="confirmarSenha"
-                                aria-label="Mostrar senha">
-                                <svg class="icon-on" viewBox="0 0 24 24" fill="none">
-                                    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" stroke="currentColor"
-                                        stroke-width="1.6" />
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" />
-                                </svg>
-                                <svg class="icon-off" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M3 3l18 18M10.6 10.6a3 3 0 0 0 4.24 4.24M9.1 5.5A11 11 0 0 1 12 5c7 0 11 7 11 7a13.5 13.5 0 0 1-3.1 3.9M6.4 6.4A13.6 13.6 0 0 0 1 12s4 7 11 7a10.9 10.9 0 0 0 3.9-.7"
-                                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                                </svg>
-                            </button>
-                        </div>
-                        <span class="field-error" id="erro-confirmar">As senhas não coincidem</span>
-                    </div>
-
-
-                    <div class="btn-row">
-                        <button class="btn-secondary" id="btn-step2-back" type="button"><span
-                                aria-hidden="true">←</span> Voltar</button>
-                        <button class="btn-primary" id="btn-step2-continue" type="button">Continuar <span
-                                aria-hidden="true">›</span></button>
-                    </div>
-                </div>
-
-
-                <div class="step" id="step-3" data-step="3">
-                    <div class="step-head">
-                        <h2>Seus dados</h2>
-                        <span class="step-count">3/3</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill" id="progress-3" style="width:100%"></div>
-                    </div>
-
-
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" id="cidade" placeholder="São Paulo">
-                            <span class="field-error" id="erro-cidade">Cidade obrigatória</span>
-                        </div>
-                        <div class="field" style="max-width:130px;">
-                            <label>UF</label>
-                            <div class="custom-select" id="ufSelect">
-                                <button type="button" class="select-trigger placeholder" id="ufTrigger">
-                                    UF <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <div class="select-options" id="ufOptions"></div>
-                            </div>
-                            <span class="field-error" id="erro-uf">Selecione o estado</span>
-                        </div>
-                    </div>
-
-
-                    <div class="field">
-                        <label id="orgLabel" for="orgNome">Nome do clube / organização</label>
-                        <input type="text" id="orgNome" placeholder="Bahia">
-                        <span class="field-error" id="erro-org">Este campo é obrigatório</span>
-                    </div>
-
-
-                    <p class="terms-note">Ao criar sua conta você concorda com os <a href="#">Termos de Uso</a> e <a
-                            href="#">Política de Privacidade</a>.</p>
-
-
-                    <div class="btn-row">
-                        <button class="btn-secondary" id="btn-step3-back" type="button"><span
-                                aria-hidden="true">←</span> Voltar</button>
-                        <button class="btn-primary" id="btn-step3-submit" type="button">Criar conta <span
-                                aria-hidden="true">›</span></button>
-                    </div>
-                </div>
-
-
-                <div class="step" id="step-success" data-step="success">
-                    <div class="success-box">
-                        <div class="success-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M5 13l4 4L19 7" stroke="#22e065" stroke-width="2.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h2>Cadastro realizado!</h2>
-                        <p>Bem-vindo ao ModoCarreira, <strong id="successName">Gabriel</strong>!</p>
-                        <p>Seu acesso profissional está ativo. Comece a buscar talentos agora.</p>
-                        <button class="btn-primary" id="btn-access-platform" type="button">Acessar a plataforma <span
-                                aria-hidden="true">›</span></button>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
+      </div>
     </div>
 
+    <div class="right-panel">
 
+      <div class="logo">
+        <span class="logo-icon">ϟ</span>
+        <span class="logo-text"><span class="light">MODO</span><span class="accent">CARREIRA</span></span>
+      </div>
 
+      <div class="form-area">
 
+        // ETAPA 1: Quem é você?
+        <div class="step active" id="step-1">
+          <div class="step-head">
+            <h2>Quem é você?</h2>
+            <span class="step-count">1/3</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:33.33%"></div>
+          </div>
 
+          <p class="login-hint">Já tem conta? <a href="/pages/login/login.html">Faça login</a></p>
 
+          <div class="option-card" data-type="clube">
+            <span class="option-icon">🏛️</span>
+            <span class="option-copy">
+              <strong>Clube / Olheiro</strong>
+              <span>Busco talentos para minha equipe ou organização</span>
+            </span>
+            <span class="option-check">✓</span>
+          </div>
 
+          <div class="option-card" data-type="empresario">
+            <span class="option-icon">🤝</span>
+            <span class="option-copy">
+              <strong>Empresário</strong>
+              <span>Represento e gerencio atletas profissionalmente</span>
+            </span>
+            <span class="option-check">✓</span>
+          </div>
 
+          <div class="btn-row">
+            <button class="btn-primary" id="btn-step1-continue" type="button">Continuar ›</button>
+          </div>
+        </div>
 
+        <div class="step" id="step-2">
+          <div class="step-head">
+            <h2>Sua conta</h2>
+            <span class="step-count">2/3</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:66.66%"></div>
+          </div>
 
+          <div class="field">
+            <label for="nomeCompleto">Nome completo</label>
+            <input type="text" id="nomeCompleto" placeholder="Digite o seu nome">
+          </div>
 
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+          </div>
 
+          <div class="field">
+            <label for="senha">Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+              <button type="button" class="pw-toggle" data-target="senha">👁</button>
+            </div>
+          </div>
 
+          <div class="field">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <div class="input-wrap">
+              <input type="password" id="confirmarSenha" placeholder="Repita a senha">
+              <button type="button" class="pw-toggle" data-target="confirmarSenha">👁</button>
+            </div>
+          </div>
 
+          <div class="btn-row">
+            <button class="btn-secondary" id="btn-step2-back" type="button">← Voltar</button>
+            <button class="btn-primary" id="btn-step2-continue" type="button">Continuar ›</button>
+          </div>
+        </div>
 
+        <div class="step" id="step-3">
+          <div class="step-head">
+            <h2>Seus dados</h2>
+            <span class="step-count">3/3</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:100%"></div>
+          </div>
 
+          <div class="field-row">
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" placeholder="São Paulo">
+            </div>
+            <div class="field" style="max-width:130px;">
+              <label for="uf">UF</label>
+              <select id="uf">
+                <option value="">UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="field">
+            <label id="orgLabel" for="orgNome">Nome do clube / organização</label>
+            <input type="text" id="orgNome" placeholder="Bahia">
+          </div>
 
-    <script src="/pages/cadastro/cadastro.js"></script>
+          <p class="terms-note">
+            Ao criar sua conta você concorda com os <a href="#">Termos de Uso</a>
+            e <a href="#">Política de Privacidade</a>.
+          </p>
+
+          <div class="btn-row">
+            <button class="btn-secondary" id="btn-step3-back" type="button">← Voltar</button>
+            <button class="btn-primary" id="btn-step3-submit" type="button">Criar conta ›</button>
+          </div>
+        </div>
+
+        <div class="step" id="step-success">
+          <div class="success-box">
+            <div class="success-icon">✓</div>
+            <h2>Cadastro realizado!</h2>
+            <p>Bem-vindo ao ModoCarreira, <strong id="successName">Atleta</strong>!</p>
+            <p>Seu acesso profissional está ativo. Comece a buscar talentos agora.</p>
+            <button class="btn-primary" id="btn-access-platform" type="button">Acessar a plataforma ›</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="/pages/cadastro/cadastro.js"></script>
 </body>
-
-
 </html>
