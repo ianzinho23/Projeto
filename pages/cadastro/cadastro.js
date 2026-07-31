@@ -11,7 +11,6 @@ function mostrarEtapa(idDaEtapa) {
 }
 
 
-// ETAPA 1: Quem é você?
 const opcoesCadastro = document.querySelectorAll(".option-card");
 
 opcoesCadastro.forEach(function (opcao) {
@@ -20,6 +19,8 @@ opcoesCadastro.forEach(function (opcao) {
         item.classList.remove("selected");
       });
 
+      this.classList.add("selected");
+      tipoDeContaEscolhido = this.getAttribute("data-type");
   });
 });
 
@@ -29,7 +30,7 @@ const campoOrganizacao = document.getElementById("orgNome");
 
 botaoStep1.addEventListener("click", function () {
   if (tipoDeContaEscolhido === "") {
-    alert("Escolha uma opção para continuar.");
+    alert("Escolha uma opção para continuar!");
     return;
   }
 
