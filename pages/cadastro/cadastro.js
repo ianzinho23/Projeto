@@ -103,7 +103,6 @@ document.getElementById("btn-step3-submit").addEventListener("click", function (
     return;
   }
 
-  // Pega o primeiro nome digitado na etapa 2 para mostrar na tela de sucesso
   const nomeCompleto = document.getElementById("nomeCompleto").value;
   const primeiroNome = nomeCompleto.trim().split(" ")[0] || "Atleta";
   document.getElementById("successName").textContent = primeiroNome;
@@ -112,5 +111,5 @@ document.getElementById("btn-step3-submit").addEventListener("click", function (
 });
 
 document.getElementById("btn-access-platform").addEventListener("click", function () {
-  window.location.href = "/index.html";
+  window.location.href = "/pages/descobrir/descobrir.html";
 });

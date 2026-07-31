@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Carreira - Descobrir Talentos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/pages/descobrir/descobrir.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container-nav">
+      <div class="logo">
+        <div class="logo-icone">ϟ</div>
+        <span class="logo-texto">Modo<span class="verde">Carreira</span></span>
+      </div>
+      <nav>
+        <ul class="links-nav">
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="#" class="ativo">Descobrir</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+    <div class="tag-secao">// Descobrir Talentos</div>
+    <h1 class="titulo-pagina">Descobrir<br><span>Talentos</span></h1>
+    <p class="subtitulo-pagina">
+      Filtros pensados para quem procura: esporte, posição, faixa etária, categoria e região.
+      Cada perfil traz estatísticas da temporada e a curva de evolução.
+    </p>
+
+    <section class="secao-filtros">
+      <input
+        type="text"
+        id="searchInput"
+        class="input-busca"
+        placeholder="Buscar por nome, posição, clube ou cidade..."
+      >
+
+      <div class="linha-filtros">
+        <select id="sportSelect" class="select-filtro">
+          <option value="">ESPORTE</option>
+          <option value="Futebol">Futebol</option>
+          <option value="Basquete">Basquete</option>
+          <option value="Vôlei">Vôlei</option>
+          <option value="Atletismo">Atletismo</option>
+          <option value="Natação">Natação</option>
+          <option value="Judô">Judô</option>
+          <option value="Handebol">Handebol</option>
+          <option value="Futsal">Futsal</option>
+        </select>
+
+        <select id="categorySelect" class="select-filtro">
+          <option value="">CATEGORIA</option>
+        </select>
+
+        <select id="stateSelect" class="select-filtro">
+          <option value="">ESTADO</option>
+        </select>
+
+        <div class="filtro-idade">
+          <button class="btn-idade ativo" data-age="all">TODOS</button>
+          <button class="btn-idade" data-age="14-16">14-16</button>
+          <button class="btn-idade" data-age="17-18">17-18</button>
+          <button class="btn-idade" data-age="19+">19+</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="barra-resultados">
+      <div><span id="resultsCount" class="contador-resultados">0</span> atletas encontrados</div>
+      <div class="ordenacao-resultados">Ordenados por relevância</div>
+    </div>
+
+    <section class="grid-atletas" id="athletesGrid" aria-live="polite"></section>
+  </main>
+
+  <div class="sobreposicao-modal" id="profileModal">
+    <div class="card-modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="fechar-modal" id="closeModal" aria-label="Fechar">&times;</button>
+
+      <div class="cabecalho-modal">
+        <div class="selo-avatar avatar-modal" id="modalAvatar">--</div>
+        <div>
+          <div class="titulo-modal" id="modalName">Nome Atleta</div>
+          <div class="detalhes-atleta" id="modalSub">Esporte • Cidade</div>
+        </div>
+      </div>
+
+      <p class="bio-modal" id="modalBio">Carregando informações do atleta...</p>
+
+      <div class="grid-estatisticas-modal" id="modalStats"></div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <div class="container-rodape">
+      <div class="logo">
+        <div class="logo-icone">ϟ</div>
+        <span class="logo-texto">Modo<span class="verde">Carreira</span></span>
+      </div>
+      <div>© 2025 ModoCarreira • # vitrine do atleta que ainda não tem vitrine.</div>
+      <ul class="links-rodape">
+        <li><a href="#">Termos</a></li>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/pages/descobrir/desscobrir.js"></script>
+</body>
+</html>

@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", function (evento) {
 });
 
 continueBtn.addEventListener("click", function () {
-  window.location.href = "/index.html";
+  window.location.href = "/pages/descobrir/descobrir.html";
 });
 
 googleBtn.addEventListener("click", function () {
