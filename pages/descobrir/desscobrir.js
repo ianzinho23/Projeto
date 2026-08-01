@@ -234,7 +234,6 @@ function renderAthletes(data) {
   data.forEach((athlete) => gridContainer.appendChild(createAthleteCard(athlete)));
 }
 
-
 function filterAthletes() {
   const query = searchInput.value.trim().toLowerCase();
   const selectedSport = sportSelect.value;

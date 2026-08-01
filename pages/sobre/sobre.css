@@ -81,7 +81,7 @@ body {
 
 .links-nav {
     display: flex;
-    margin-right: 820px;
+    margin-right: 610px;
     font-family: 'Barlow Condensed', sans-serif;
     gap: 2rem;
     list-style: none;
@@ -107,14 +107,56 @@ body {
 /*Aqui começa o Hero-Escuro*/
 
 .hero-escuro {
-     background-color: #1a1a1a;
+    background-color: #0b110e; /* Um fundo ainda mais escuro/esverdeado */
     background-image:
-        linear-gradient(rgba(0, 230, 77, 1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 230, 77, 1) 1px, transparent 1px);
+        linear-gradient(rgba(0, 230, 77, 0.05) 1px, transparent 1px), /* Opacidade em 5% */
+        linear-gradient(90deg, rgba(0, 230, 77, 0.05) 1px, transparent 1px);
     background-size: 100px 100px;
     min-height: 850px;
     padding: 1px;
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.manifesto-1{
+    margin-top: 40px;
+    font-size: 18px;
+    color: var(--cor-verde);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.manifesto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+.linha{
+    font-size: 20px;
+    font-family: 'Barlow', sans-serif;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .6s ease;
+}
+
+.linha.aparecer{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.linha.linha-transparente{
+    opacity: 0.5;
+}
+
+.linha.linha-maior{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 30px;
+    font-size: 70px;
+    color: var(--cor-verde);
 }
