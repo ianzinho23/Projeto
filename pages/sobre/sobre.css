@@ -1,0 +1,120 @@
+:root {
+    --fundo-escuro: #090c0a;
+    --fundo-card: #131815;
+    --fundo-card-hover: #19201c;
+    --fundo-input: #101412;
+    --cor-borda: #212a24;
+    --cor-verde: #00e64d;
+    --verde-primario: #00ff66;
+    --verde-primario-hover: #00cc52;
+    --texto-branco: #ffffff;
+    --texto-cinza: #88968c;
+    --texto-cinza-escuro: #556359;
+    --fonte-principal: 'Inter', sans-serif;
+    --raio-pequeno: 6px;
+    --raio-medio: 10px;
+    --transicao: all 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fundo-escuro);
+    color: var(--texto-branco);
+    font-family: var(--fonte-principal);
+    min-height: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1.25rem 2rem;
+}
+
+.container-nav {
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 8px;
+}
+
+.logo-icone {
+    background-color: var(--cor-verde);
+    color: var(--cor-fundo);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.logo-icone-pequeno {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+}
+
+.logo-texto {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.verde {
+    color: var(--cor-verde);
+}
+
+
+.links-nav {
+    display: flex;
+    margin-right: 820px;
+    font-family: 'Barlow Condensed', sans-serif;
+    gap: 2rem;
+    list-style: none;
+}
+
+.links-nav a {
+    color: var(--texto-cinza);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transicao);
+}
+
+.links-nav a.ativo,
+.links-nav a:hover {
+    color: var(--verde-primario);
+    border-bottom: 2px solid var(--verde-primario);
+    padding-bottom: 4px;
+}
+
+/*Aqui começa o Hero-Escuro*/
+
+.hero-escuro {
+     background-color: #1a1a1a;
+    background-image:
+        linear-gradient(rgba(0, 230, 77, 1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 230, 77, 1) 1px, transparent 1px);
+    background-size: 100px 100px;
+    min-height: 850px;
+    padding: 1px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
