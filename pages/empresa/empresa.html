@@ -1,1 +1,99 @@
-a
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModoCarreira - Painel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/pages/empresa/empresa.css">
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <span class="logo-icon">ϟ</span>
+        <span class="logo-text"><span class="light">MODO</span><span class="accent">CARREIRA</span></span>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav class="navbar-links" id="navbarLinks">
+        <a href="/pages/empresa/empresa.html" class="link-ativo">Início</a>
+        <a href="/pages/descobrir/descobrir.html">Descobrir</a>
+        <a href="/pages/sobre/sobre.html">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="boas-vindas">
+    <div class="container">
+      <p class="rotulo">// painel do profissional</p>
+      <h1 class="titulo-boas-vindas">
+        Seja <span class="accent">Bem-Vindo</span> ao <span id="nomeUsuario"> ModoCarreira</span>
+      </h1>
+      <p class="subtexto-boas-vindas">
+        Sua conta profissional está ativa. A partir daqui você pode buscar talentos,
+        acompanhar estatísticas e entrar em contato direto com os atletas.
+      </p>
+
+      <a href="/pages/descobrir/descobrir.html" class="btn-primary">Descobrir Talentos ›</a>
+    </div>
+  </section>
+
+  
+  <section class="resumo">
+    <div class="container">
+      <p class="rotulo">// resumo da sua conta</p>
+
+      <div class="cards-resumo">
+        <div class="card-resumo">
+          <p class="card-numero">2.400+</p>
+          <p class="card-legenda">Atletas disponíveis</p>
+        </div>
+        <div class="card-resumo">
+          <p class="card-numero">180+</p>
+          <p class="card-legenda">Clubes parceiros na base</p>
+        </div>
+        <div class="card-resumo">
+          <p class="card-numero">0</p>
+          <p class="card-legenda">Contatos iniciados por você</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="dicas">
+    <div class="container">
+      <p class="rotulo">// como usar a plataforma</p>
+      <h2 class="titulo-secao">Comece em <span class="accent">3 passos</span></h2>
+
+      <div class="lista-dicas">
+        <div class="dica-card">
+          <p class="dica-numero">01</p>
+          <h3 class="dica-titulo">Descubra Talentos</h3>
+          <p class="dica-texto">Use os filtros de esporte, posição, categoria e região para encontrar o atleta certo.</p>
+        </div>
+        <div class="dica-card">
+          <p class="dica-numero">02</p>
+          <h3 class="dica-titulo">Veja o Perfil Completo</h3>
+          <p class="dica-texto">Estatísticas, evolução, vídeos de destaque e ficha técnica de cada atleta.</p>
+        </div>
+        <div class="dica-card">
+          <p class="dica-numero">03</p>
+          <h3 class="dica-titulo">Entre em Contato</h3>
+          <p class="dica-texto">Fale direto com o atleta ou responsável pelo perfil, sem intermediários.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/pages/empresa/empresa.js"></script>
+</body>
+</html>

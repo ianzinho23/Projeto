@@ -1,3 +1,6 @@
+// ==========================================
+// LISTA DE ATLETAS
+// ==========================================
 const athletesData = [
   {
     id: 1,
@@ -9,110 +12,20 @@ const athletesData = [
     city: "Campinas/SP",
     age: 17,
     category: "Sub-17",
-    stat1Label: "JOGOS", stat1Val: "28",
-    stat2Label: "GOLS", stat2Val: "14",
+    club: "EC Juventude SP",
+    height: "1,76 m",
+    weight: "68 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "28" },
+      { label: "GOLS", val: "14" },
+      { label: "ASSISTÊNCIAS", val: "9" },
+      { label: "PASSES CERTOS", val: "87%" }
+    ],
     bio: "Destaque na criação de jogadas ofensivas e visão de jogo. Atualmente defendendo as categorias de base locais com ótima taxa de conversão."
   },
   {
     id: 2,
-    name: "Beatriz Moraes",
-    initials: "BM",
-    color: "#0ea5e9",
-    sport: "Vôlei",
-    position: "Oposto",
-    city: "Santos/SP",
-    age: 18,
-    category: "Sub-20",
-    stat1Label: "SETS", stat1Val: "96",
-    stat2Label: "PONTOS", stat2Val: "412",
-    bio: "Atacante de força com excelente alcance de bloqueio. Alta regularidade no saque e pontuação por partida."
-  },
-  {
-    id: 3,
-    name: "Rafael Tavares",
-    initials: "RT",
-    color: "#f97316",
-    sport: "Basquete",
-    position: "Armador",
-    city: "Belo Horizonte/MG",
-    age: 18,
-    category: "Sub-19",
-    stat1Label: "JOGOS", stat1Val: "22",
-    stat2Label: "PTS/JOGO", stat2Val: "16,4",
-    bio: "Armador com grande ritmo de jogo, controle de bola refinado e excelente aproveitamento nas bolas de 3 pontos."
-  },
-  {
-    id: 4,
-    name: "Camila Souza",
-    initials: "CS",
-    color: "#a855f7",
-    sport: "Atletismo",
-    position: "100m rasos",
-    city: "Fortaleza/CE",
-    age: 17,
-    category: "Sub-18",
-    stat1Label: "MELHOR 100M", stat1Val: "11s84",
-    stat2Label: "MELHOR 200M", stat2Val: "24s31",
-    bio: "Velocista com explosão de saída acima da média nacional na sua categoria. Recordista estadual jovem."
-  },
-  {
-    id: 5,
-    name: "Diego Nakamura",
-    initials: "DN",
-    color: "#eab308",
-    sport: "Judô",
-    position: "Categoria -73 kg",
-    city: "Curitiba/PR",
-    age: 19,
-    category: "Sub-21",
-    stat1Label: "LUTAS", stat1Val: "34",
-    stat2Label: "VITÓRIAS", stat2Val: "25",
-    bio: "Judoca com técnica apurada em golpes de projeção (Seoi-nage). Atleta disciplinado com foco em torneios internacionais."
-  },
-  {
-    id: 6,
-    name: "Isabela Rocha",
-    initials: "IR",
-    color: "#ec4899",
-    sport: "Natação",
-    position: "200 m Medley",
-    city: "Rio de Janeiro/RJ",
-    age: 16,
-    category: "Sub-17",
-    stat1Label: "200M MEDLEY", stat1Val: "2:18,4",
-    stat2Label: "100M LIVRE", stat2Val: "58s80",
-    bio: "Nadadora versátil com excelente transição entre os nados e ótima resistência de prova."
-  },
-  {
-    id: 7,
-    name: "Gustavo Lima",
-    initials: "GL",
-    color: "#3b82f6",
-    sport: "Handebol",
-    position: "Pivô",
-    city: "Vitória/ES",
-    age: 18,
-    category: "Sub-20",
-    stat1Label: "JOGOS", stat1Val: "18",
-    stat2Label: "GOLS", stat2Val: "77",
-    bio: "Pivô físico e dominante na área de 6 metros. Alta capacidade de giro e finalizações precisas."
-  },
-  {
-    id: 8,
-    name: "Marina Alencar",
-    initials: "MA",
-    color: "#f43f5e",
-    sport: "Futsal",
-    position: "Ala",
-    city: "Goiânia/GO",
-    age: 15,
-    category: "Sub-15",
-    stat1Label: "JOGOS", stat1Val: "16",
-    stat2Label: "GOLS", stat2Val: "18",
-    bio: "Ala hibrida com drible curto desconcertante e ótima recomposição defensiva."
-  },
-  {
-    id: 9,
     name: "Pedro Quintana",
     initials: "PQ",
     color: "#06b6d4",
@@ -121,64 +34,170 @@ const athletesData = [
     city: "Porto Alegre/RS",
     age: 19,
     category: "Sub-20",
-    stat1Label: "JOGOS", stat1Val: "26",
-    stat2Label: "DUELOS AÉREOS", stat2Val: "74%",
+    club: "Grêmio Novo Hamburgo",
+    height: "1,88 m",
+    weight: "79 kg",
+    foot: "Esquerdo",
+    stats: [
+      { label: "JOGOS", val: "26" },
+      { label: "DUELOS AÉREOS", val: "74%" },
+      { label: "DESARMES", val: "3,1/jogo" },
+      { label: "PASSES CERTOS", val: "91%" }
+    ],
     bio: "Zagueiro técnico, forte na imposição física e com boa saída de bola usando o pé esquerdo."
   },
   {
-    id: 10,
-    name: "Tainara Belo",
-    initials: "TB",
-    color: "#84cc16",
-    sport: "Basquete",
-    position: "Ala-pivô",
+    id: 3,
+    name: "Thiago Amaral",
+    initials: "TA",
+    color: "#f97316",
+    sport: "Futebol",
+    position: "Atacante",
     city: "Recife/PE",
-    age: 17,
-    category: "Sub-17",
-    stat1Label: "JOGOS", stat1Val: "20",
-    stat2Label: "PTS/JOGO", stat2Val: "13,8",
-    bio: "Atleta com grande presença no garrafão, destacando-se na coleta de rebotes ofensivos."
-  },
-  {
-    id: 11,
-    name: "Henrique Dória",
-    initials: "HD",
-    color: "#0284c7",
-    sport: "Natação",
-    position: "50 m Livre",
-    city: "Salvador/BA",
     age: 18,
     category: "Sub-20",
-    stat1Label: "50M LIVRE", stat1Val: "23s41",
-    stat2Label: "100M LIVRE", stat2Val: "51s72",
-    bio: "Velocista puro das piscinas. Destaca-se por uma braçada potente e saída limpa de bloco."
+    club: "Sport Recife de Base",
+    height: "1,80 m",
+    weight: "74 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "24" },
+      { label: "GOLS", val: "19" },
+      { label: "ASSISTÊNCIAS", val: "5" },
+      { label: "FINALIZAÇÕES NO ALVO", val: "62%" }
+    ],
+    bio: "Atacante de velocidade, forte no jogo pelas costas da defesa e na finalização de primeira."
   },
   {
-    id: 12,
-    name: "Júlia Pastore",
-    initials: "JP",
+    id: 4,
+    name: "Bruno Cardoso",
+    initials: "BC",
+    color: "#a855f7",
+    sport: "Futebol",
+    position: "Volante",
+    city: "Curitiba/PR",
+    age: 17,
+    category: "Sub-17",
+    club: "Athletico Jr PR",
+    height: "1,74 m",
+    weight: "67 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "22" },
+      { label: "DESARMES", val: "3,4/jogo" },
+      { label: "INTERCEPTAÇÕES", val: "2,8/jogo" },
+      { label: "PASSES CERTOS", val: "88%" }
+    ],
+    bio: "Volante de marcação com boa leitura de jogo e saída de bola limpa para o setor ofensivo."
+  },
+  {
+    id: 5,
+    name: "Enzo Ribeiro",
+    initials: "ER",
     color: "#eab308",
-    sport: "Atletismo",
-    position: "Salto em distância",
-    city: "São Paulo/SP",
+    sport: "Futebol",
+    position: "Ponta-direita",
+    city: "Salvador/BA",
     age: 16,
     category: "Sub-17",
-    stat1Label: "MELHOR SALTO", stat1Val: "5,92m",
-    stat2Label: "MÉDIA", stat2Val: "5,68m",
-    bio: "Saltadora com excelente velocidade de corrida de aproximação e precisão de tábua."
+    club: "EC Bahia de Base",
+    height: "1,71 m",
+    weight: "63 kg",
+    foot: "Esquerdo",
+    stats: [
+      { label: "JOGOS", val: "19" },
+      { label: "ASSISTÊNCIAS", val: "11" },
+      { label: "DRIBLES CERTOS", val: "4,2/jogo" },
+      { label: "GOLS", val: "6" }
+    ],
+    bio: "Ponta habilidoso, forte no drible curto e no cruzamento de precisão. Uma das principais promessas da base baiana."
+  },
+  {
+    id: 6,
+    name: "Matheus Vidal",
+    initials: "MV",
+    color: "#0ea5e9",
+    sport: "Futebol",
+    position: "Lateral-direito",
+    city: "Fortaleza/CE",
+    age: 19,
+    category: "Sub-20",
+    club: "Ceará SC Sub-20",
+    height: "1,77 m",
+    weight: "71 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "27" },
+      { label: "ASSISTÊNCIAS", val: "8" },
+      { label: "CRUZAMENTOS CERTOS", val: "2,6/jogo" },
+      { label: "DESARMES", val: "2,9/jogo" }
+    ],
+    bio: "Lateral de apoio constante, com bom fôlego para subir ao ataque e retornar na marcação."
+  },
+  {
+    id: 7,
+    name: "Caio Bezerra",
+    initials: "CB",
+    color: "#22c55e",
+    sport: "Futebol",
+    position: "Meio-campista",
+    city: "Belo Horizonte/MG",
+    age: 18,
+    category: "Sub-20",
+    club: "Cruzeiro Base MG",
+    height: "1,78 m",
+    weight: "72 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "25" },
+      { label: "PASSES CERTOS", val: "89%" },
+      { label: "ASSISTÊNCIAS", val: "7" },
+      { label: "DESARMES", val: "2,3/jogo" }
+    ],
+    bio: "Meio-campista de construção, com excelente visão de jogo e precisão nos passes longos."
+  },
+  {
+    id: 8,
+    name: "Vitor Hugo Santos",
+    initials: "VS",
+    color: "#ec4899",
+    sport: "Futebol",
+    position: "Goleiro",
+    city: "Manaus/AM",
+    age: 17,
+    category: "Sub-17",
+    club: "Nacional FC Manaus",
+    height: "1,89 m",
+    weight: "80 kg",
+    foot: "Direito",
+    stats: [
+      { label: "JOGOS", val: "20" },
+      { label: "DEFESAS", val: "68" },
+      { label: "APROVEITAMENTO", val: "78%" },
+      { label: "JOGOS SEM SOFRER GOL", val: "7" }
+    ],
+    bio: "Goleiro com ótima reação de curta distância e liderança na organização da defesa."
   }
 ];
 
+// ==========================================
+// FAIXAS DE IDADE
+// ==========================================
 const AGE_RANGES = {
-  all: () => true,
+  all: (age) => true,
   '14-16': (age) => age >= 14 && age <= 16,
   '17-18': (age) => age >= 17 && age <= 18,
   '19+': (age) => age >= 19
 };
 
+// ==========================================
+// ELEMENTOS DA PÁGINA
+// ==========================================
 const gridContainer = document.getElementById('athletesGrid');
 const searchInput = document.getElementById('searchInput');
 const sportSelect = document.getElementById('sportSelect');
+const categorySelect = document.getElementById('categorySelect');
+const stateSelect = document.getElementById('stateSelect');
 const ageButtons = document.querySelectorAll('.btn-idade');
 const resultsCount = document.getElementById('resultsCount');
 
@@ -187,11 +206,16 @@ const closeModalBtn = document.getElementById('closeModal');
 const modalAvatar = document.getElementById('modalAvatar');
 const modalName = document.getElementById('modalName');
 const modalSub = document.getElementById('modalSub');
+const modalLocal = document.getElementById('modalLocal');
 const modalBio = document.getElementById('modalBio');
 const modalStats = document.getElementById('modalStats');
+const modalFicha = document.getElementById('modalFicha');
 
 let currentAgeFilter = 'all';
 
+// ==========================================
+// FUNÇÕES DE RENDERIZAÇÃO
+// ==========================================
 function createAthleteCard(athlete) {
   const card = document.createElement('article');
   card.className = 'card-atleta';
@@ -213,12 +237,12 @@ function createAthleteCard(athlete) {
 
       <div class="container-estatisticas">
         <div class="item-estatistica">
-          <span class="valor-estatistica">${athlete.stat1Val}</span>
-          <span class="rotulo-estatistica">${athlete.stat1Label}</span>
+          <span class="valor-estatistica">${athlete.stats[0].val}</span>
+          <span class="rotulo-estatistica">${athlete.stats[0].label}</span>
         </div>
         <div class="item-estatistica">
-          <span class="valor-estatistica">${athlete.stat2Val}</span>
-          <span class="rotulo-estatistica">${athlete.stat2Label}</span>
+          <span class="valor-estatistica">${athlete.stats[1].val}</span>
+          <span class="rotulo-estatistica">${athlete.stats[1].label}</span>
         </div>
       </div>
     </div>
@@ -234,9 +258,14 @@ function renderAthletes(data) {
   data.forEach((athlete) => gridContainer.appendChild(createAthleteCard(athlete)));
 }
 
+// ==========================================
+// LÓGICA DE FILTRAGEM
+// ==========================================
 function filterAthletes() {
   const query = searchInput.value.trim().toLowerCase();
   const selectedSport = sportSelect.value;
+  const selectedCategory = categorySelect.value;
+  const selectedState = stateSelect.value;
   const matchesAge = AGE_RANGES[currentAgeFilter] || AGE_RANGES.all;
 
   const filtered = athletesData.filter((athlete) => {
@@ -244,31 +273,47 @@ function filterAthletes() {
       athlete.name.toLowerCase().includes(query) ||
       athlete.sport.toLowerCase().includes(query) ||
       athlete.position.toLowerCase().includes(query) ||
-      athlete.city.toLowerCase().includes(query);
+      athlete.city.toLowerCase().includes(query) ||
+      athlete.club.toLowerCase().includes(query);
 
     const matchesSport = selectedSport === '' || athlete.sport === selectedSport;
+    const matchesCategory = selectedCategory === '' || athlete.category === selectedCategory;
+    const matchesState = selectedState === '' || athlete.city.includes(selectedState);
 
-    return matchesSearch && matchesSport && matchesAge(athlete.age);
+    return matchesSearch && matchesSport && matchesCategory && matchesState && matchesAge(athlete.age);
   });
 
   renderAthletes(filtered);
 }
 
+// ==========================================
+// MODAL
+// ==========================================
 function renderModalStats(athlete) {
-  modalStats.innerHTML = `
+  modalStats.innerHTML = athlete.stats.map((stat) => `
     <div class="item-estatistica">
-      <span class="valor-estatistica">${athlete.stat1Val}</span>
-      <span class="rotulo-estatistica">${athlete.stat1Label}</span>
+      <span class="valor-estatistica">${stat.val}</span>
+      <span class="rotulo-estatistica">${stat.label}</span>
     </div>
-    <div class="item-estatistica">
-      <span class="valor-estatistica">${athlete.stat2Val}</span>
-      <span class="rotulo-estatistica">${athlete.stat2Label}</span>
+  `).join('');
+}
+
+function renderModalFicha(athlete) {
+  const linhas = [
+    { rotulo: "Idade", valor: `${athlete.age} anos` },
+    { rotulo: "Altura", valor: athlete.height },
+    { rotulo: "Peso", valor: athlete.weight },
+    { rotulo: "Pé dominante", valor: athlete.foot },
+    { rotulo: "Categoria", valor: athlete.category },
+    { rotulo: "Clube", valor: athlete.club }
+  ];
+
+  modalFicha.innerHTML = linhas.map((linha) => `
+    <div class="linha-ficha">
+      <span class="rotulo-linha-ficha">${linha.rotulo}</span>
+      <span class="valor-linha-ficha">${linha.valor}</span>
     </div>
-    <div class="item-estatistica">
-      <span class="valor-estatistica">${athlete.category}</span>
-      <span class="rotulo-estatistica">CATEGORIA</span>
-    </div>
-  `;
+  `).join('');
 }
 
 function openProfile(id) {
@@ -278,9 +323,11 @@ function openProfile(id) {
   modalAvatar.textContent = athlete.initials;
   modalAvatar.style.backgroundColor = athlete.color;
   modalName.textContent = athlete.name;
-  modalSub.textContent = `${athlete.sport} (${athlete.position}) • ${athlete.city} • ${athlete.age} anos`;
+  modalSub.textContent = `${athlete.sport} • ${athlete.position} • ${athlete.category} • ${athlete.club}`;
+  modalLocal.textContent = `📍 ${athlete.city}`;
   modalBio.textContent = athlete.bio;
   renderModalStats(athlete);
+  renderModalFicha(athlete);
 
   modal.classList.add('ativo');
 }
@@ -289,6 +336,9 @@ function closeProfile() {
   modal.classList.remove('ativo');
 }
 
+// ==========================================
+// EVENTOS
+// ==========================================
 gridContainer.addEventListener('click', (event) => {
   const btn = event.target.closest('.btn-perfil');
   if (!btn) return;
@@ -307,6 +357,8 @@ document.addEventListener('keydown', (event) => {
 
 searchInput.addEventListener('input', filterAthletes);
 sportSelect.addEventListener('change', filterAthletes);
+categorySelect.addEventListener('change', filterAthletes);
+stateSelect.addEventListener('change', filterAthletes);
 
 ageButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -316,4 +368,6 @@ ageButtons.forEach((btn) => {
     filterAthletes();
   });
 });
+
+// Inicialização
 renderAthletes(athletesData);

@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modo Carreira - Descobrir Talentos</title>
 
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
+  <!-- CSS Externo -->
   <link rel="stylesheet" href="/pages/descobrir/descobrir.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
       </div>
       <nav>
         <ul class="links-nav">
-          <li><a href="/index.html">Início</a></li>
+          <li><a href="/pages/empresa/empresa.html">Início</a></li>
           <li><a href="#" class="ativo">Descobrir</a></li>
           <li><a href="/pages/sobre/sobre.html">Sobre</a></li>
         </ul>
@@ -35,7 +36,7 @@
     <div class="tag-secao">// Descobrir Talentos</div>
     <h1 class="titulo-pagina">Descobrir<br><span>Talentos</span></h1>
     <p class="subtitulo-pagina">
-      Filtros pensados para quem procura: esporte, posição, faixa etária, categoria e região.
+      Filtros pensados para quem procura: posição, faixa etária, categoria e região.
       Cada perfil traz estatísticas da temporada e a curva de evolução.
     </p>
 
@@ -51,21 +52,24 @@
         <select id="sportSelect" class="select-filtro">
           <option value="">ESPORTE</option>
           <option value="Futebol">Futebol</option>
-          <option value="Basquete">Basquete</option>
-          <option value="Vôlei">Vôlei</option>
-          <option value="Atletismo">Atletismo</option>
-          <option value="Natação">Natação</option>
-          <option value="Judô">Judô</option>
-          <option value="Handebol">Handebol</option>
-          <option value="Futsal">Futsal</option>
         </select>
 
         <select id="categorySelect" class="select-filtro">
           <option value="">CATEGORIA</option>
+          <option value="Sub-17">Sub-17</option>
+          <option value="Sub-20">Sub-20</option>
         </select>
 
         <select id="stateSelect" class="select-filtro">
           <option value="">ESTADO</option>
+          <option value="SP">São Paulo (SP)</option>
+          <option value="RS">Rio Grande do Sul (RS)</option>
+          <option value="PE">Pernambuco (PE)</option>
+          <option value="PR">Paraná (PR)</option>
+          <option value="BA">Bahia (BA)</option>
+          <option value="CE">Ceará (CE)</option>
+          <option value="MG">Minas Gerais (MG)</option>
+          <option value="AM">Amazonas (AM)</option>
         </select>
 
         <div class="filtro-idade">
@@ -92,14 +96,23 @@
       <div class="cabecalho-modal">
         <div class="selo-avatar avatar-modal" id="modalAvatar">--</div>
         <div>
-          <div class="titulo-modal" id="modalName">Nome Atleta</div>
-          <div class="detalhes-atleta" id="modalSub">Esporte • Cidade</div>
+          <div class="linha-nome-modal">
+            <span class="titulo-modal" id="modalName">Nome Atleta</span>
+            <span class="icone-verificado">✓</span>
+          </div>
+          <div class="detalhes-atleta" id="modalSub">Esporte • Posição • Categoria • Clube</div>
+          <div class="detalhes-atleta" id="modalLocal">📍 Cidade</div>
         </div>
       </div>
 
       <p class="bio-modal" id="modalBio">Carregando informações do atleta...</p>
 
       <div class="grid-estatisticas-modal" id="modalStats"></div>
+
+      <div class="ficha-tecnica-modal">
+        <p class="rotulo-ficha">// Ficha Técnica</p>
+        <div id="modalFicha"></div>
+      </div>
     </div>
   </div>
 
@@ -118,6 +131,7 @@
     </div>
   </footer>
 
+  <!-- JS Externo -->
   <script src="/pages/descobrir/desscobrir.js"></script>
 </body>
 </html>

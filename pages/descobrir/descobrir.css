@@ -4,7 +4,7 @@
   --fundo-card-hover: #19201c;
   --fundo-input: #101412;
   --cor-borda: #212a24;
-   --cor-verde: #00e64d;
+  --cor-verde: #00e64d;
   --verde-primario: #00ff66;
   --verde-primario-hover: #00cc52;
   --texto-branco: #ffffff;
@@ -52,19 +52,13 @@ body {
 
 .logo-icone {
   background-color: var(--cor-verde);
-  color: var(--cor-fundo);
+  color: var(--fundo-escuro);
   width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-}
-
-.logo-icone-pequeno {
-  width: 24px;
-  height: 24px;
-  font-size: 13px;
 }
 
 .logo-texto {
@@ -79,10 +73,9 @@ body {
   color: var(--cor-verde);
 }
 
-
 .links-nav {
   display: flex;
-   font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   gap: 2rem;
   list-style: none;
 }
@@ -103,8 +96,6 @@ body {
   border-bottom: 2px solid var(--verde-primario);
   padding-bottom: 4px;
 }
-
-/*Aqui começa o bagui*/
 
 .conteudo-principal {
   max-width: 1200px;
@@ -421,6 +412,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.linha-nome-modal {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .avatar-modal {
   width: 60px;
   height: 60px;
@@ -444,9 +441,47 @@ body {
 
 .grid-estatisticas-modal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: var(--raio-pequeno);
+}
+
+.ficha-tecnica-modal {
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 1.25rem;
+}
+
+.rotulo-ficha {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--verde-primario);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.linha-ficha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.85rem;
+}
+
+.linha-ficha:last-child {
+  border-bottom: none;
+}
+
+.rotulo-linha-ficha {
+  color: var(--texto-cinza);
+}
+
+.valor-linha-ficha {
+  font-weight: 700;
 }
 
 .rodape {
