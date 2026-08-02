@@ -320,7 +320,7 @@ a:hover {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
   padding: 13px 14px;
-  color: var(--text-white);
+  color: grey;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
 }

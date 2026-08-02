@@ -54,7 +54,7 @@ botoesVerSenha.forEach(function (botao) {
 
     if (campoSenha.type === "password") {
       campoSenha.type = "text";
-      botao.textContent = "🙈";
+      botao.textContent = "⌣";
     } else {
       campoSenha.type = "password";
       botao.textContent = "👁";
@@ -112,5 +112,5 @@ document.getElementById("btn-step3-submit").addEventListener("click", function (
 });
 
 document.getElementById("btn-access-platform").addEventListener("click", function () {
-  window.location.href = "/pages/descobrir/descobrir.html";
+  window.location.href = "/pages/empresa/empresa.html";
 });

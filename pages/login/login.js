@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", function (evento) {
 });
 
 continueBtn.addEventListener("click", function () {
-  window.location.href = "/pages/descobrir/descobrir.html";
+  window.location.href = "/pages/empresa/empresa.html";
 });
 
 googleBtn.addEventListener("click", function () {
