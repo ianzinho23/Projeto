@@ -1,0 +1,119 @@
+<app-cabecalho />
+
+<main class="principal">
+
+  <section class="boas-vindas fundo-grade">
+    <div class="container">
+      <p class="rotulo">// painel do profissional</p>
+      <h1 class="titulo-boas-vindas">
+        Seja <span class="accent">Bem-Vindo</span> ao ModoCarreira
+      </h1>
+
+      @if (sessao.usuario(); as usuario) {
+        <p class="identidade">
+          <strong>{{ usuario.nome }}</strong> · {{ tipoDeConta() }} · {{ usuario.organizacao }}
+        </p>
+      }
+
+      <p class="subtexto-boas-vindas">
+        Sua conta profissional está ativa. A partir daqui você pode buscar talentos,
+        acompanhar estatísticas e entrar em contato direto com os atletas.
+      </p>
+
+      <div class="acoes">
+        <a routerLink="/descobrir" class="btn btn--primario">Descobrir Talentos ›</a>
+        <button type="button" class="btn btn--contorno" (click)="sair()">Sair da conta</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="resumo" aria-labelledby="titulo-resumo">
+    <div class="container">
+      <h2 class="rotulo" id="titulo-resumo">// resumo da sua conta</h2>
+
+      <div class="cards-resumo">
+        @for (item of resumo(); track item.legenda) {
+          <div class="card-resumo card-base">
+            <p class="card-numero">{{ item.numero }}</p>
+            <p class="card-legenda">{{ item.legenda }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="atividade" aria-labelledby="titulo-favoritos">
+    <div class="container">
+      <h2 class="rotulo" id="titulo-favoritos">// seus favoritos</h2>
+
+      @if (atletasFavoritos().length > 0) {
+        <div class="grade-favoritos">
+          @for (atleta of atletasFavoritos(); track atleta.id) {
+            <article class="favorito card-base">
+              <div class="favorito-topo">
+                <div class="avatar" [style.background-color]="atleta.cor" aria-hidden="true">{{ atleta.iniciais }}</div>
+                <div>
+                  <p class="favorito-nome">{{ atleta.nome }}</p>
+                  <p class="favorito-detalhe">{{ atleta.posicao }} · {{ atleta.clube }}</p>
+                </div>
+              </div>
+              <div class="favorito-acoes">
+                <a routerLink="/descobrir" [queryParams]="{ atleta: atleta.id }" class="btn btn--primario btn--pequeno">Ver perfil</a>
+                <button type="button" class="btn btn--contorno btn--pequeno" (click)="removerFavorito(atleta)" [attr.aria-label]="'Remover ' + atleta.nome + ' dos favoritos'">Remover</button>
+              </div>
+            </article>
+          }
+        </div>
+      } @else {
+        <div class="vazio">
+          <p>Você ainda não favoritou nenhum atleta.</p>
+          <a routerLink="/descobrir" class="btn btn--contorno btn--pequeno">Encontrar atletas</a>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="atividade" aria-labelledby="titulo-contatos">
+    <div class="container">
+      <h2 class="rotulo" id="titulo-contatos">// contatos recentes</h2>
+
+      @if (contatosRecentes().length > 0) {
+        <ul class="lista-contatos">
+          @for (contato of contatosRecentes(); track contato.id) {
+            <li class="contato card-base">
+              <div>
+                <p class="contato-assunto">{{ contato.assunto }}</p>
+                <p class="contato-detalhe">Para {{ contato.atletaNome }}</p>
+              </div>
+              <time class="contato-data" [attr.datetime]="contato.data">{{ contato.data | date: 'dd/MM/yyyy HH:mm' }}</time>
+            </li>
+          }
+        </ul>
+      } @else {
+        <div class="vazio">
+          <p>Nenhum contato iniciado ainda. Abra o perfil de um atleta e use “Iniciar contato”.</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="dicas" aria-labelledby="titulo-dicas">
+    <div class="container">
+      <p class="rotulo">// como usar a plataforma</p>
+      <h2 class="titulo-secao" id="titulo-dicas">Comece em <span class="accent">3 passos</span></h2>
+
+      <div class="lista-dicas">
+        @for (dica of dicas; track dica.numero) {
+          <div class="dica-card card-base">
+            <p class="dica-numero">{{ dica.numero }}</p>
+            <h3 class="dica-titulo">{{ dica.titulo }}</h3>
+            <p class="dica-texto">{{ dica.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<app-rodape />

@@ -1,0 +1,86 @@
+<div class="page">
+
+  <section class="side side--visual">
+    <div class="visual-bg"></div>
+    <div class="visual-vignette"></div>
+
+    <a routerLink="/" class="back-link">← Voltar ao início</a>
+
+    <div class="visual-bottom">
+      <p class="eyebrow">// plataforma de talentos</p>
+
+      <h1 class="hero-title">
+        SEU PRÓXIMO <br>
+        <span class="accent">PASSO COMEÇA</span> <br>
+        AQUI.
+      </h1>
+
+      <p class="hero-sub">
+        Mais de 2.400 atletas já estão na vitrine. Olheiros de 180 clubes
+        buscam talentos todos os dias.
+      </p>
+    </div>
+  </section>
+
+  <section class="side side--form">
+    <div class="form-wrap">
+
+      <div class="brand">
+        <app-logo />
+      </div>
+
+      @if (!loginFeito()) {
+        <div class="panel">
+          <h2 class="title">Entrar</h2>
+          <p class="subtitle">
+            Não tem conta?
+            <a routerLink="/cadastro" class="link">Cadastre-se grátis</a>
+          </p>
+
+          <form (ngSubmit)="entrar()" ngNativeValidate>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="seu@email.com" required [(ngModel)]="email">
+            </div>
+
+            <div class="field">
+              <label for="senha">Senha</label>
+              <div class="password-wrap">
+                <input id="senha" name="senha" [type]="mostrarSenha() ? 'text' : 'password'" placeholder="••••••••" required [(ngModel)]="senha">
+                <button type="button" class="toggle-pass" [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="mostrarSenha()" (click)="alternarSenha()">
+                  <span aria-hidden="true">{{ mostrarSenha() ? '⌣' : '👁' }}</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="row-between">
+              <label class="checkbox">
+                <input type="checkbox" name="lembrar" [(ngModel)]="lembrar">
+                Lembrar de mim
+              </label>
+              <button type="button" class="link link--muted link-botao" (click)="esqueciSenha()">Esqueci a senha</button>
+            </div>
+
+            <button class="btn btn--primario btn--bloco" type="submit">Entrar na Plataforma →</button>
+          </form>
+
+          <div class="divider"><span>ou continue com</span></div>
+
+          <div class="oauth-row">
+            <button class="btn btn--contorno" type="button" (click)="entrarComRedeSocial('Google')">Google</button>
+            <button class="btn btn--contorno" type="button" (click)="entrarComRedeSocial('Facebook')">Facebook</button>
+          </div>
+        </div>
+      } @else {
+        <div id="panelSuccess" class="panel" role="status">
+          <div class="success-icon">✓</div>
+          <h2 class="success-title">Bem-vindo de volta!</h2>
+          <p class="success-sub">Login realizado com sucesso.</p>
+          <button type="button" class="btn btn--primario btn--bloco" (click)="irParaPlataforma()">Ir para a Plataforma →</button>
+        </div>
+      }
+
+    </div>
+  </section>
+
+</div>

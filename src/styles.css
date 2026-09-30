@@ -1,0 +1,196 @@
+/* =========================================================
+   ESTILOS GLOBAIS DO MODOCARREIRA
+   Variáveis, reset, foco, botões e cards usados em todas as páginas
+   ========================================================= */
+:root {
+  /* Cores */
+  --fundo: #070d07;
+  --fundo-alt: #0b110e;
+  --fundo-card: #0f180f;
+  --fundo-campo: #101a12;
+  --verde: #00e64d;
+  --verde-hover: #33ff77;
+  --texto: #eef5ee;
+  --texto-cinza: #8a9c8a;
+  --texto-fraco: #5d705d;
+  --borda: rgba(0, 230, 77, 0.14);
+  --borda-neutra: rgba(255, 255, 255, 0.09);
+  --erro: #ff5a5f;
+  --aviso: #ffc94d;
+
+  /* Formas e efeitos */
+  --raio: 6px;
+  --raio-lg: 10px;
+  --sombra-card: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --sombra-card-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+  --transicao: 0.2s ease;
+
+  /* Tipografia */
+  --fonte-titulo: 'Barlow Condensed', 'Anton', sans-serif;
+  --fonte-corpo: 'Inter', 'Barlow', sans-serif;
+  --fonte-mono: 'JetBrains Mono', monospace;
+
+  /* Largura padrão do conteúdo */
+  --largura: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ---------- Foco visível (teclado) ---------- */
+:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 0;
+}
+
+/* Texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Botões padrão ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  transition: transform var(--transicao), background-color var(--transicao),
+    border-color var(--transicao), color var(--transicao);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--primario {
+  background-color: var(--verde);
+  color: #04130a;
+}
+
+.btn--primario:hover {
+  background-color: var(--verde-hover);
+}
+
+.btn--contorno {
+  background-color: transparent;
+  color: var(--texto);
+  border-color: var(--borda-neutra);
+}
+
+.btn--contorno:hover {
+  border-color: var(--verde);
+  color: var(--verde);
+}
+
+.btn--pequeno {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn--bloco {
+  width: 100%;
+}
+
+/* ---------- Card padrão (borda sutil, sombra discreta, hover) ---------- */
+.card-base {
+  background-color: var(--fundo-card);
+  border: 1px solid var(--borda-neutra);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-card);
+  transition: transform var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.card-base:hover {
+  transform: translateY(-3px);
+  border-color: var(--borda);
+  box-shadow: var(--sombra-card-hover);
+}
+
+/* ---------- Fundo com grade sutil (só nos heros) ---------- */
+.fundo-grade {
+  background-image:
+    linear-gradient(rgba(0, 230, 77, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 230, 77, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ---------- Mensagens de formulário ---------- */
+.msg-erro {
+  color: var(--erro);
+  font-size: 13.5px;
+  margin: 4px 0 16px;
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

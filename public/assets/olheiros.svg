@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração de campo de futebol com prancheta de avaliação">
+  <defs>
+    <pattern id="grade" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#00e64d" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0b110e"/>
+  <rect width="800" height="600" fill="url(#grade)"/>
+  <g fill="none" stroke="#00e64d" stroke-opacity="0.4" stroke-width="3">
+    <rect x="80" y="90" width="640" height="420"/>
+    <line x1="400" y1="90" x2="400" y2="510"/>
+    <circle cx="400" cy="300" r="70"/>
+    <rect x="80" y="210" width="110" height="180"/>
+    <rect x="610" y="210" width="110" height="180"/>
+  </g>
+  <g fill="#00e64d">
+    <circle cx="260" cy="230" r="14"/><circle cx="330" cy="360" r="14"/>
+    <circle cx="480" cy="250" r="14"/><circle cx="560" cy="340" r="14" fill-opacity="0.45"/>
+  </g>
+  <g stroke="#00e64d" stroke-width="3" stroke-dasharray="8 8" fill="none" stroke-opacity="0.8">
+    <path d="M260 230 Q 300 300 330 360"/><path d="M330 360 Q 420 260 480 250"/>
+  </g>
+  <rect x="520" y="400" width="190" height="90" fill="#0f180f" stroke="#00e64d" stroke-opacity="0.5"/>
+  <g fill="#00e64d" fill-opacity="0.85"><rect x="540" y="420" width="120" height="8"/><rect x="540" y="442" width="90" height="8" fill-opacity="0.5"/><rect x="540" y="464" width="140" height="8" fill-opacity="0.5"/></g>
+</svg>

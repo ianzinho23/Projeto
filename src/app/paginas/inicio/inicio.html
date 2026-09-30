@@ -1,0 +1,144 @@
+<app-cabecalho modo="publico" />
+
+<!-- Hero -->
+<section class="hero fundo-grade">
+  <div class="hero-container">
+    <div class="hero-texto">
+      <div class="hero-tag">
+        <span class="bolinha"></span>
+        Plataforma de Talentos do Futebol Base
+      </div>
+
+      <h1 class="hero-titulo">
+        Seu Talento <br>
+        <span class="verde">Merece</span> <br>
+        Ser Visto
+      </h1>
+
+      <p class="hero-paragrafo">
+        Conectamos atletas das categorias de base com clubes, olheiros, empresários e
+        treinadores de todo o Brasil. Do interior ao profissional, uma plataforma que
+        abre portas.
+      </p>
+
+      <div class="hero-botoes">
+        <a routerLink="/cadastro" class="btn btn--primario">Criar Meu Perfil →</a>
+        <a routerLink="/descobrir" class="btn btn--contorno">Ver Atletas</a>
+      </div>
+
+      <div class="hero-stats">
+        @for (item of estatisticas; track item.legenda) {
+          <div class="stat">
+            <p class="stat-numero">{{ item.numero }}</p>
+            <p class="stat-legenda">{{ item.legenda }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hero-imagem">
+      <img appImagemFallback="https://i.postimg.cc/bJQp6yBQ/atleta-veio.png" alt="Jovem atleta de base em ação no campo durante um treino" width="600" height="530">
+    </div>
+  </div>
+</section>
+
+<!-- Como funciona -->
+<section class="secao secao-escura">
+  <div class="container">
+    <p class="rotulo">// como funciona</p>
+    <h2 class="titulo-secao">Do Campo ao <span class="verde">Profissional</span></h2>
+
+    <div class="passos">
+      @for (passo of passos; track passo.numero) {
+        <div class="passo-card">
+          <p class="passo-numero-fundo">{{ passo.numero }}</p>
+          <p class="rotulo">{{ passo.rotulo }}</p>
+          <h3 class="passo-titulo">{{ passo.titulo }}</h3>
+          <p class="passo-texto">{{ passo.texto }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Para profissionais -->
+<section class="secao">
+  <div class="container">
+    <div class="profissionais-grade">
+      <div class="profissionais-imagem">
+        <img appImagemFallback="assets/olheiros.svg" alt="Ilustração de um campo de futebol com jogadas marcadas e uma prancheta de avaliação de atletas" width="600" height="440">
+        <div class="cartao-flutuante">
+          <p class="stat-numero">180+</p>
+          <p class="cartao-flutuante-texto">Clubes parceiros buscam talentos aqui</p>
+        </div>
+      </div>
+
+      <div class="profissionais-texto">
+        <p class="rotulo">// para profissionais</p>
+        <h2 class="titulo-secao">Encontre Talentos <span class="verde">Antes de Todos</span></h2>
+        <p class="paragrafo-normal">
+          Acesso a uma base completa e atualizada de atletas de base por todo o Brasil.
+          Filtre por posição, categoria, região e métricas de desempenho. Economize
+          tempo, descubra mais.
+        </p>
+
+        <div class="lista-recursos">
+          @for (recurso of recursos; track recurso.titulo) {
+            <div class="recurso-item card-base">
+              <div class="recurso-icone">{{ recurso.icone }}</div>
+              <div>
+                <p class="recurso-titulo">{{ recurso.titulo }}</p>
+                <p class="recurso-texto">{{ recurso.texto }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <a routerLink="/cadastro" class="btn btn--primario">Acesso para Profissionais →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="secao secao-escura">
+  <div class="container">
+    <p class="rotulo">// depoimentos</p>
+    <h2 class="titulo-secao">Histórias que <span class="verde">Inspiram</span></h2>
+
+    <div class="depoimentos">
+      @for (dep of depoimentos; track dep.nome) {
+        <div class="depoimento-card card-base">
+          <p class="aspas">"</p>
+          <p class="depoimento-texto">{{ dep.texto }}</p>
+          <div class="depoimento-autor">
+            <img [appImagemFallback]="dep.foto" fallback="assets/avatar-placeholder.svg" [alt]="'Avatar de ' + dep.nome" class="autor-foto" width="40" height="40">
+            <div>
+              <p class="autor-nome">{{ dep.nome }}</p>
+              <p class="autor-cargo">{{ dep.cargo }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Chamada final -->
+<section class="secao cta-final">
+  <div class="container cta-conteudo">
+    <p class="rotulo">// próximo passo</p>
+    <h2 class="titulo-cta">Sua Carreira <span class="verde">Começa Agora</span></h2>
+    <p class="paragrafo-normal">
+      Cadastre seu perfil gratuitamente e entre para a maior vitrine de talentos
+      do futebol base brasileiro. Olheiros e clubes estão esperando por você.
+    </p>
+
+    <div class="cta-botoes">
+      <a routerLink="/cadastro" class="btn btn--primario">Cadastrar Atleta — É Grátis →</a>
+      <a routerLink="/cadastro" class="btn btn--contorno">Acesso para Clubes</a>
+    </div>
+  </div>
+</section>
+
+<app-rodape />

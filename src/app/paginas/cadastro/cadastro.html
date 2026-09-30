@@ -1,0 +1,184 @@
+<div class="page">
+
+  <div class="left-panel">
+    <a routerLink="/" class="back-link">← Voltar ao início</a>
+
+    <div class="left-bottom-content">
+      <div class="features">
+        <div class="feature"><span class="feature-icon" aria-hidden="true">🔍</span> Acesso à base completa de talentos</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">🎯</span> Filtros por esporte, posição e região</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">💬</span> Contato direto com o atleta</div>
+      </div>
+
+      <div class="hero-text">
+        <h1>ACESSE</h1>
+        <h1 class="green">2.400+</h1>
+        <h1>PERFIS.</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+
+    <div class="logo-topo">
+      <app-logo />
+    </div>
+
+    <div class="form-area">
+
+      @if (etapa() === 1) {
+        <div class="step active">
+          <div class="step-head">
+            <h2 id="titulo-etapa-1">Quem é você?</h2>
+            <span class="step-count">1/3</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1">
+            <div class="progress-fill" style="width:33.33%"></div>
+          </div>
+
+          <p class="login-hint">Já tem conta? <a routerLink="/login">Faça login</a></p>
+
+          <!-- Botões de verdade: funcionam com Tab, Enter e Espaço -->
+          <div role="group" aria-labelledby="titulo-etapa-1">
+            <button type="button" class="option-card" [class.selected]="tipoDeConta() === 'clube'" [attr.aria-pressed]="tipoDeConta() === 'clube'" (click)="escolherTipo('clube')">
+              <span class="option-icon" aria-hidden="true">🏛️</span>
+              <span class="option-copy">
+                <strong>Clube / Olheiro</strong>
+                <span>Busco talentos para minha equipe ou organização</span>
+              </span>
+              <span class="option-check" aria-hidden="true">✓</span>
+            </button>
+
+            <button type="button" class="option-card" [class.selected]="tipoDeConta() === 'empresario'" [attr.aria-pressed]="tipoDeConta() === 'empresario'" (click)="escolherTipo('empresario')">
+              <span class="option-icon" aria-hidden="true">🤝</span>
+              <span class="option-copy">
+                <strong>Empresário</strong>
+                <span>Represento e gerencio atletas profissionalmente</span>
+              </span>
+              <span class="option-check" aria-hidden="true">✓</span>
+            </button>
+          </div>
+
+          @if (erro()) {
+            <p class="msg-erro" role="alert">{{ erro() }}</p>
+          }
+
+          <div class="btn-row">
+            <button class="btn btn--primario" type="button" (click)="continuarEtapa1()">Continuar ›</button>
+          </div>
+        </div>
+      }
+
+      @if (etapa() === 2) {
+        <div class="step active">
+          <div class="step-head">
+            <h2>Sua conta</h2>
+            <span class="step-count">2/3</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2">
+            <div class="progress-fill" style="width:66.66%"></div>
+          </div>
+
+          <div class="field">
+            <label for="nomeCompleto">Nome completo</label>
+            <input type="text" id="nomeCompleto" autocomplete="name" placeholder="Digite o seu nome" [(ngModel)]="nomeCompleto">
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" autocomplete="email" placeholder="seu@email.com" [(ngModel)]="email">
+          </div>
+
+          <div class="field">
+            <label for="senha">Senha</label>
+            <div class="input-wrap">
+              <input [type]="verSenha() ? 'text' : 'password'" id="senha" autocomplete="new-password" placeholder="Mínimo 6 caracteres" [(ngModel)]="senha">
+              <button type="button" class="pw-toggle" [attr.aria-label]="verSenha() ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="verSenha()" (click)="verSenha.set(!verSenha())">
+                <span aria-hidden="true">{{ verSenha() ? '⌣' : '👁' }}</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <div class="input-wrap">
+              <input [type]="verConfirmarSenha() ? 'text' : 'password'" id="confirmarSenha" autocomplete="new-password" placeholder="Repita a senha" [(ngModel)]="confirmarSenha">
+              <button type="button" class="pw-toggle" [attr.aria-label]="verConfirmarSenha() ? 'Ocultar confirmação de senha' : 'Mostrar confirmação de senha'" [attr.aria-pressed]="verConfirmarSenha()" (click)="verConfirmarSenha.set(!verConfirmarSenha())">
+                <span aria-hidden="true">{{ verConfirmarSenha() ? '⌣' : '👁' }}</span>
+              </button>
+            </div>
+          </div>
+
+          @if (erro()) {
+            <p class="msg-erro" role="alert">{{ erro() }}</p>
+          }
+
+          <div class="btn-row">
+            <button class="btn btn--contorno" type="button" (click)="mostrarEtapa(1)">← Voltar</button>
+            <button class="btn btn--primario" type="button" (click)="continuarEtapa2()">Continuar ›</button>
+          </div>
+        </div>
+      }
+
+      @if (etapa() === 3) {
+        <div class="step active">
+          <div class="step-head">
+            <h2>Seus dados</h2>
+            <span class="step-count">3/3</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3">
+            <div class="progress-fill" style="width:100%"></div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" placeholder="São Paulo" [(ngModel)]="cidade">
+            </div>
+            <div class="field field--uf">
+              <label for="uf">UF</label>
+              <select id="uf" [(ngModel)]="uf">
+                <option value="">UF</option>
+                @for (sigla of ufs; track sigla) {
+                  <option [value]="sigla">{{ sigla }}</option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="orgNome">{{ rotuloOrganizacao() }}</label>
+            <input type="text" id="orgNome" [placeholder]="placeholderOrganizacao()" [(ngModel)]="organizacao">
+          </div>
+
+          <p class="terms-note">
+            Ao criar sua conta você concorda com os Termos de Uso e a Política de Privacidade
+            da plataforma. Este cadastro é uma demonstração: nenhum dado sai do seu navegador.
+          </p>
+
+          @if (erro()) {
+            <p class="msg-erro" role="alert">{{ erro() }}</p>
+          }
+
+          <div class="btn-row">
+            <button class="btn btn--contorno" type="button" (click)="mostrarEtapa(2)">← Voltar</button>
+            <button class="btn btn--primario" type="button" (click)="criarConta()">Criar conta ›</button>
+          </div>
+        </div>
+      }
+
+      @if (etapa() === 4) {
+        <div class="step active">
+          <div class="success-box" role="status">
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>Cadastro realizado!</h2>
+            <p>Bem-vindo ao ModoCarreira, <strong>{{ primeiroNome() }}</strong>!</p>
+            <p>Seu acesso profissional está ativo. Comece a buscar talentos agora.</p>
+            <button class="btn btn--primario" type="button" (click)="acessarPlataforma()">Acessar a plataforma ›</button>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

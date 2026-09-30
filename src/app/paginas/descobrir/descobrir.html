@@ -1,0 +1,248 @@
+<app-cabecalho />
+
+<main class="conteudo-principal">
+  <div class="tag-secao">// Descobrir Talentos</div>
+  <h1 class="titulo-pagina">Descobrir<br><span>Talentos</span></h1>
+  <p class="subtitulo-pagina">
+    Filtros pensados para quem procura: posição, faixa etária, categoria e região.
+    Cada perfil traz estatísticas da temporada e a curva de evolução.
+  </p>
+
+  <section class="secao-filtros" aria-label="Filtros de busca">
+    <input
+      type="search"
+      class="input-busca"
+      placeholder="Buscar por nome, posição, clube ou cidade..."
+      aria-label="Buscar atletas por nome, posição, clube ou cidade"
+      [(ngModel)]="busca"
+    >
+
+    <div class="linha-filtros">
+      <select class="select-filtro" aria-label="Filtrar por esporte" [(ngModel)]="esporte">
+        <option value="">ESPORTE</option>
+        @for (item of esportes; track item) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+
+      <select class="select-filtro" aria-label="Filtrar por categoria" [(ngModel)]="categoria">
+        <option value="">CATEGORIA</option>
+        @for (item of categorias; track item) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+
+      <select class="select-filtro" aria-label="Filtrar por estado" [(ngModel)]="estado">
+        <option value="">ESTADO</option>
+        @for (item of estados; track item.sigla) {
+          <option [value]="item.sigla">{{ item.nome }}</option>
+        }
+      </select>
+
+      <div class="filtro-idade" role="group" aria-label="Faixa de idade">
+        @for (botao of botoesIdade; track botao.valor) {
+          <button type="button" class="btn-idade" [class.ativo]="faixaIdade() === botao.valor" [attr.aria-pressed]="faixaIdade() === botao.valor" (click)="faixaIdade.set(botao.valor)">
+            {{ botao.rotulo }}
+          </button>
+        }
+      </div>
+
+      <button type="button" class="btn-favoritos" [class.ativo]="somenteFavoritos()" [attr.aria-pressed]="somenteFavoritos()" (click)="somenteFavoritos.set(!somenteFavoritos())">
+        <span aria-hidden="true">{{ somenteFavoritos() ? '♥' : '♡' }}</span> Favoritos ({{ favoritos.total() }})
+      </button>
+    </div>
+
+    @if (filtrosAtivos().length > 0) {
+      <div class="chips" role="group" aria-label="Filtros ativos">
+        @for (filtro of filtrosAtivos(); track filtro.chave) {
+          <button type="button" class="chip" [attr.aria-label]="'Remover filtro: ' + filtro.texto" (click)="removerFiltro(filtro.chave)">
+            {{ filtro.texto }} <span aria-hidden="true">×</span>
+          </button>
+        }
+        <button type="button" class="chip-limpar" (click)="limparFiltros()">Limpar filtros</button>
+      </div>
+    }
+  </section>
+
+  <div class="barra-resultados">
+    <p class="contagem" role="status" aria-live="polite">
+      <span class="contador-resultados">{{ atletasVisiveis().length }}</span>
+      {{ atletasVisiveis().length === 1 ? 'atleta encontrado' : 'atletas encontrados' }}
+    </p>
+
+    <div class="ordenacao-resultados">
+      <label for="ordenacao">Ordenar por</label>
+      <select id="ordenacao" class="select-filtro" [(ngModel)]="ordenacao">
+        @for (opcao of opcoesOrdenacao; track opcao.valor) {
+          <option [value]="opcao.valor">{{ opcao.rotulo }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <!-- Região "viva": o leitor de tela avisa quando a lista muda ou fica vazia -->
+  <div class="area-resultados" aria-live="polite">
+    @if (atletasVisiveis().length > 0) {
+      <section class="grid-atletas" aria-label="Lista de atletas">
+        @for (atleta of atletasVisiveis(); track atleta.id) {
+          <article class="card-atleta card-base">
+            <div>
+              <div class="cabecalho-card">
+                <div class="selo-avatar" [style.background-color]="atleta.cor" aria-hidden="true">{{ atleta.iniciais }}</div>
+                <div class="info-atleta">
+                  <div class="linha-nome">
+                    <h2 class="nome-atleta">{{ atleta.nome }}</h2>
+                    <span class="icone-verificado" role="img" aria-label="Perfil verificado">✓</span>
+                  </div>
+                  <div class="detalhes-atleta">
+                    {{ atleta.esporte }} • {{ atleta.posicao }}<br>
+                    📍 {{ atleta.cidade }} • {{ atleta.idade }} anos • {{ atleta.categoria }}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn-coracao"
+                  [class.ativo]="favoritos.ehFavorito(atleta.id)"
+                  [attr.aria-pressed]="favoritos.ehFavorito(atleta.id)"
+                  [attr.aria-label]="(favoritos.ehFavorito(atleta.id) ? 'Remover dos favoritos: ' : 'Adicionar aos favoritos: ') + atleta.nome"
+                  (click)="alternarFavorito(atleta)"
+                >
+                  <span aria-hidden="true">{{ favoritos.ehFavorito(atleta.id) ? '♥' : '♡' }}</span>
+                </button>
+              </div>
+
+              <div class="container-estatisticas">
+                <div class="item-estatistica">
+                  <span class="valor-estatistica">{{ atleta.estatisticas[0].valor }}</span>
+                  <span class="rotulo-estatistica">{{ atleta.estatisticas[0].rotulo }}</span>
+                </div>
+                <div class="item-estatistica">
+                  <span class="valor-estatistica">{{ atleta.estatisticas[1].valor }}</span>
+                  <span class="rotulo-estatistica">{{ atleta.estatisticas[1].rotulo }}</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-perfil" [attr.aria-label]="'Ver perfil de ' + atleta.nome" (click)="abrirPerfil(atleta, $event)">
+              VER PERFIL <span aria-hidden="true">&gt;</span>
+            </button>
+          </article>
+        }
+      </section>
+    } @else {
+      <div class="estado-vazio">
+        <p class="vazio-icone" aria-hidden="true">⚽</p>
+        <h2 class="vazio-titulo">Nenhum atleta encontrado</h2>
+        <p class="vazio-texto">
+          Nenhum perfil combina com os filtros atuais. Tente outra busca ou remova alguns filtros.
+        </p>
+        <button type="button" class="btn btn--primario" (click)="limparFiltros()">Limpar filtros</button>
+      </div>
+    }
+  </div>
+</main>
+
+<!-- Modal do perfil do atleta -->
+@if (atletaSelecionado(); as atleta) {
+  <div class="sobreposicao-modal" (click)="cliqueNoFundo($event)">
+    <div class="card-modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-describedby="modal-bio">
+      <button #botaoFechar type="button" class="fechar-modal" aria-label="Fechar perfil do atleta" (click)="fecharPerfil()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="cabecalho-modal">
+        <div class="selo-avatar avatar-modal" [style.background-color]="atleta.cor" aria-hidden="true">{{ atleta.iniciais }}</div>
+        <div>
+          <div class="linha-nome-modal">
+            <h2 class="titulo-modal" id="modal-titulo">{{ atleta.nome }}</h2>
+            <span class="icone-verificado" role="img" aria-label="Perfil verificado">✓</span>
+          </div>
+          <div class="detalhes-atleta">{{ atleta.esporte }} • {{ atleta.posicao }} • {{ atleta.categoria }} • {{ atleta.clube }}</div>
+          <div class="detalhes-atleta">📍 {{ atleta.cidade }}</div>
+        </div>
+      </div>
+
+      <p class="bio-modal" id="modal-bio">{{ atleta.bio }}</p>
+
+      <div class="grid-estatisticas-modal">
+        @for (stat of atleta.estatisticas; track stat.rotulo) {
+          <div class="item-estatistica">
+            <span class="valor-estatistica">{{ stat.valor }}</span>
+            <span class="rotulo-estatistica">{{ stat.rotulo }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="ficha-tecnica-modal">
+        <p class="rotulo-ficha">// Ficha Técnica</p>
+        <div>
+          @for (linha of ficha(); track linha.rotulo) {
+            <div class="linha-ficha">
+              <span class="rotulo-linha-ficha">{{ linha.rotulo }}</span>
+              <span class="valor-linha-ficha">{{ linha.valor }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Ações: favoritar e iniciar contato -->
+      <div class="acoes-modal">
+        <button
+          type="button"
+          class="btn btn--contorno btn-favoritar"
+          [class.ativo]="favoritos.ehFavorito(atleta.id)"
+          [attr.aria-pressed]="favoritos.ehFavorito(atleta.id)"
+          (click)="alternarFavorito(atleta)"
+        >
+          <span aria-hidden="true">{{ favoritos.ehFavorito(atleta.id) ? '♥' : '♡' }}</span>
+          {{ favoritos.ehFavorito(atleta.id) ? 'Favoritado' : 'Favoritar' }}
+        </button>
+
+        <button type="button" class="btn btn--primario" aria-controls="form-contato" [attr.aria-expanded]="contatoAberto()" (click)="alternarContato()">
+          Iniciar contato
+        </button>
+      </div>
+
+      @if (contatosDoAtleta() > 0 && !contatoRegistrado()) {
+        <p class="nota-contato">
+          Você já iniciou {{ contatosDoAtleta() }} {{ contatosDoAtleta() === 1 ? 'contato' : 'contatos' }} com este atleta.
+        </p>
+      }
+
+      @if (contatoRegistrado()) {
+        <div class="contato-sucesso" role="status">
+          <p><strong>Contato registrado!</strong> Ele já aparece no seu painel.</p>
+          <a routerLink="/empresa" class="btn btn--contorno btn--pequeno">Voltar ao painel</a>
+        </div>
+      }
+
+      @if (contatoAberto()) {
+        <form id="form-contato" class="form-contato" (ngSubmit)="enviarContato()" novalidate>
+          <p class="rotulo-ficha">// Novo contato (simulado)</p>
+
+          <div class="campo">
+            <label for="contato-assunto">Assunto</label>
+            <input id="contato-assunto" name="assunto" type="text" maxlength="80" placeholder="Ex.: Convite para avaliação" [(ngModel)]="assunto">
+          </div>
+
+          <div class="campo">
+            <label for="contato-mensagem">Mensagem</label>
+            <textarea id="contato-mensagem" name="mensagem" rows="4" maxlength="500" placeholder="Escreva sua mensagem para o atleta ou responsável" [(ngModel)]="mensagem"></textarea>
+          </div>
+
+          @if (erroContato()) {
+            <p class="msg-erro" role="alert">{{ erroContato() }}</p>
+          }
+
+          <div class="acoes-form">
+            <button type="button" class="btn btn--contorno btn--pequeno" (click)="alternarContato()">Cancelar</button>
+            <button type="submit" class="btn btn--primario btn--pequeno">Registrar contato</button>
+          </div>
+          <p class="aviso-simulado">Demonstração: nada é enviado, o contato fica salvo só no seu navegador.</p>
+        </form>
+      }
+    </div>
+  </div>
+}
+
+<app-rodape />

@@ -1,0 +1,10 @@
+<!-- Região "viva": leitores de tela anunciam cada aviso novo -->
+<div class="toasts" aria-live="polite" aria-atomic="false">
+  @for (toast of servico.toasts(); track toast.id) {
+    <div class="toast toast--{{ toast.tipo }}" [attr.role]="toast.tipo === 'erro' ? 'alert' : 'status'">
+      <span class="toast-icone" aria-hidden="true">{{ icone(toast.tipo) }}</span>
+      <span class="toast-texto">{{ toast.mensagem }}</span>
+      <button type="button" class="toast-fechar" aria-label="Fechar aviso" (click)="servico.fechar(toast.id)">&times;</button>
+    </div>
+  }
+</div>

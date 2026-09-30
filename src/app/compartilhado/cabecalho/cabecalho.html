@@ -1,0 +1,38 @@
+<header class="cabecalho">
+  <div class="cabecalho-container">
+    <app-logo />
+
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-controls="menu-principal"
+      [attr.aria-expanded]="menuAberto()"
+      [attr.aria-label]="menuAberto() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
+      (click)="alternarMenu()"
+    >
+      <span aria-hidden="true">{{ menuAberto() ? '✕' : '☰' }}</span>
+    </button>
+
+    <nav id="menu-principal" class="menu" [class.aberto]="menuAberto()" aria-label="Menu principal">
+      @if (modo() === 'painel') {
+        <a routerLink="/empresa" routerLinkActive="ativo" ariaCurrentWhenActive="page" (click)="fecharMenu()">Início</a>
+        <a routerLink="/descobrir" routerLinkActive="ativo" ariaCurrentWhenActive="page" (click)="fecharMenu()">Descobrir</a>
+        <a routerLink="/sobre" routerLinkActive="ativo" ariaCurrentWhenActive="page" (click)="fecharMenu()">Sobre</a>
+      }
+
+      <div class="menu-acoes">
+        @if (sessao.logado()) {
+          @if (modo() === 'publico') {
+            <a routerLink="/empresa" class="btn btn--primario btn--pequeno" (click)="fecharMenu()">Ir para o painel</a>
+          } @else {
+            <span class="usuario">Olá, {{ sessao.primeiroNome() }}</span>
+          }
+          <button type="button" class="btn btn--contorno btn--pequeno" (click)="sair()">Sair</button>
+        } @else {
+          <a routerLink="/login" class="btn btn--contorno btn--pequeno" (click)="fecharMenu()">Entrar</a>
+          <a routerLink="/cadastro" class="btn btn--primario btn--pequeno" (click)="fecharMenu()">Cadastrar</a>
+        }
+      </div>
+    </nav>
+  </div>
+</header>

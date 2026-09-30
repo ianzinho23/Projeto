@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Imagem indisponível">
+  <defs>
+    <pattern id="grade" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#00e64d" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0b110e"/>
+  <rect width="800" height="600" fill="url(#grade)"/>
+  <g fill="none" stroke="#00e64d" stroke-opacity="0.35" stroke-width="3">
+    <rect x="200" y="130" width="400" height="340"/>
+    <line x1="400" y1="130" x2="400" y2="470"/>
+    <circle cx="400" cy="300" r="60"/>
+  </g>
+  <circle cx="400" cy="300" r="6" fill="#00e64d"/>
+  <text x="400" y="520" text-anchor="middle" font-family="monospace" font-size="20" letter-spacing="3" fill="#7a9c7a">IMAGEM INDISPONÍVEL</text>
+</svg>

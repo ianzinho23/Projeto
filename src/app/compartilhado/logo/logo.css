@@ -1,0 +1,35 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--raio);
+}
+
+.logo-icone {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--verde);
+  color: #04130a;
+  border-radius: var(--raio);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.logo-texto {
+  font-family: var(--fonte-titulo);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.verde {
+  color: var(--verde);
+}
+
+.logo--pequeno .logo-icone { width: 24px; height: 24px; font-size: 13px; }
+.logo--pequeno .logo-texto { font-size: 18px; }

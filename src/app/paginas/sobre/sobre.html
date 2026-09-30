@@ -1,0 +1,186 @@
+<app-cabecalho />
+
+<main class="principal">
+
+  <div class="hero-escuro fundo-grade">
+
+    <h1 class="manifesto-1">// MANIFESTO</h1>
+
+    <section class="manifesto">
+      @for (linha of manifesto; track $index) {
+        <p class="linha {{ linha.classe }}" [class.aparecer]="$index < linhasVisiveis()">{{ linha.texto }}</p>
+      }
+
+      <div class="botoes-manifesto">
+        <a routerLink="/cadastro" class="btn btn--primario linha" [class.aparecer]="linhasVisiveis() > 7">{{ textoCriarPerfil }}</a>
+        <a routerLink="/descobrir" class="btn btn--contorno linha" [class.aparecer]="linhasVisiveis() > 8">{{ textoVerAtletas }}</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="hero-pequeno">
+
+    <h3 class="impacto">// IMPACTO EM NÚMEROS</h3>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>2.400+</h2>
+        <h3>ATLETAS CADASTRADOS</h3>
+        <p>EM 12 ESTADOS</p>
+      </div>
+
+      <div class="card">
+        <h2>180+</h2>
+        <h3>CLUBES PARCEIROS</h3>
+        <p>DAS SÉRIES A, B E C</p>
+      </div>
+
+      <div class="card">
+        <h2>320+</h2>
+        <h3>OLHEIROS ATIVOS</h3>
+        <p>CONSULTANDO TODA SEMANA</p>
+      </div>
+
+      <div class="esporte">
+        <h2>12</h2>
+        <h3>MODALIDADES</h3>
+        <p>DO FUTEBOL AO JUDÔ</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="como-funciona" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">// Como funciona</div>
+        <h2>Do treino à oportunidade</h2>
+      </div>
+      <div class="steps">
+        @for (passo of passos; track passo.numero) {
+          <div class="step">
+            <div class="step-top">
+              <span class="step-num-label">{{ passo.numero }}</span>
+              <span class="step-num">{{ passo.numero }}</span>
+            </div>
+            <h3>{{ passo.titulo }}</h3>
+            <p>{{ passo.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="dois-lados" id="para-quem">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">// Para quem é</div>
+        <h2>Dois lados, uma plataforma</h2>
+      </div>
+      <div class="lados-grid">
+        <div class="lado-card">
+          <div class="eyebrow">// Para o atleta de base</div>
+          <h3>Para o<br>atleta de base</h3>
+          <ul class="lado-list">
+            @for (item of itensAtleta; track item) {
+              <li><span class="check">✓</span> {{ item }}</li>
+            }
+          </ul>
+          <a routerLink="/cadastro" class="btn btn--primario">Criar meu perfil ›</a>
+        </div>
+        <div class="lado-card">
+          <div class="eyebrow">// Para o olheiro e clube</div>
+          <h3>Para o<br>profissional</h3>
+          <ul class="lado-list">
+            @for (item of itensProfissional; track item) {
+              <li><span class="check">✓</span> {{ item }}</li>
+            }
+          </ul>
+          <a routerLink="/empresa" class="btn btn--contorno">Acesso profissional ›</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="historia" id="historia">
+    <div class="wrap">
+      <div class="section-head" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">// Nossa história</div>
+        <h2>De uma cancha para o Brasil</h2>
+      </div>
+      <div class="timeline">
+        @for (marco of historia; track marco.ano; let ultimo = $last) {
+          <div class="tl-row">
+            <div class="tl-year">{{ marco.ano }}</div>
+            <div class="tl-marker">
+              <div class="tl-dot"></div>
+              @if (!ultimo) {
+                <div class="tl-line"></div>
+              }
+            </div>
+            <div class="tl-content">
+              <h4>{{ marco.titulo }}</h4>
+              <p>{{ marco.texto }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="valores" id="valores">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">// O que nos guia</div>
+        <h2>Nossos valores</h2>
+      </div>
+      <div class="valores-grid">
+        @for (valor of valores; track valor.titulo) {
+          <div class="valor-card">
+            <div class="valor-top"><span class="valor-icon">{{ valor.icone }}</span></div>
+            <h3>{{ valor.titulo }}</h3>
+            <p>{{ valor.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">// Perguntas frequentes</div>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-wrap">
+        @for (item of perguntas; track item.pergunta; let i = $index) {
+          <div class="faq-item" [class.open]="perguntaAberta() === i">
+            <button type="button" class="faq-q" [id]="'faq-pergunta-' + i" [attr.aria-expanded]="perguntaAberta() === i" [attr.aria-controls]="'faq-resposta-' + i" (click)="alternarPergunta(i)">
+              {{ item.pergunta }}
+              <span class="faq-icon" aria-hidden="true">⌄</span>
+            </button>
+            <div class="faq-a" #resposta role="region" [id]="'faq-resposta-' + i" [attr.aria-labelledby]="'faq-pergunta-' + i" [style.max-height]="perguntaAberta() === i ? resposta.scrollHeight + 'px' : null">
+              <div class="faq-a-inner">{{ item.resposta }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="wrap">
+      <div class="eyebrow">// Próximo passo</div>
+      <h2>Sua jornada<br>começa <span class="hl">agora</span></h2>
+      <p>Cadastro gratuito. Perfil completo. Sem burocracia. Você treina — nós garantimos que alguém vê.</p>
+      <div class="cta-btns">
+        <a routerLink="/cadastro" class="btn btn--primario">Criar conta grátis ›</a>
+        <a routerLink="/descobrir" class="btn btn--contorno">Explorar atletas</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<app-rodape />
